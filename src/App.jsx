@@ -5,6 +5,7 @@ import Registro from "./components/pages/Registro/Registro";
 import Login from "./components/pages/Login/Login"; //Pendiente
 import Home from "./components/pages/Home/Home";
 import MarcaUno from "./components/pages/MarcaUno/MarcaUno";
+import AgregarGorra from "./components/pages/AgregarGorra/AgregarGorra";
 import Inventario from "./components/pages/Inventario/Inventario";
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/MarcaUno" element={<MarcaUno/>}/>
 
 
+        <Route path="/AgregarGorra" element={<AgregarGorra/>}/>
         <Route path="/Inventario" element={<Inventario/>}/>
             
     </Routes>
