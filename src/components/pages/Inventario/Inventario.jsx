@@ -45,7 +45,7 @@ function Inventario() {
 
   return (
     <>
-    <h1>INVENTARIO</h1>
+    <h1>INVENTARIO ROOSTER CAPS</h1>
     <Container>
         <Row
         lg = "4"
