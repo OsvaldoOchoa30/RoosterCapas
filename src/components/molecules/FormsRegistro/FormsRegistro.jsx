@@ -13,8 +13,8 @@ function FormsRegistro() {
   return (
     <>
     <div className={styles.container}> 
-        <TituloRegistro titulo="Registro"/>
-        <ParrafoRegistro registro="Para conocer nuestros productos."/>
+        <TituloRegistro titulo="Crear Cuenta"/>
+
 
         
         
