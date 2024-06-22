@@ -24,9 +24,9 @@ function Home() {
       Precio: 15.99,
     },
     {
-      Imagen: "https://www.ameshop.com.mx/medias/AS-13822254-1.jpg?context=bWFzdGVyfGltYWdlc3wxMjA4MjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhkL2g1ZS8xMjMxODI1MTY0NzAwNi5qcGd8MDIzZTNjY2MxZGIyMWM2NjYxYzZiNTg0NTU2M2U5Y2VmNWI5NTUxZTc4MWQzNWU4MDk1ODI0MTM3ZGRlNWY3OA",
-      Titulo: "Gorra Roja",
-      Precio: 12.99,
+      Imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXCuvlIiWc-nZ5-sS5bAQi8BPjWTfmlMD0bQ&s",
+      Titulo: "Gorra Azul",
+      Precio: 17.99,
     },    {
       Imagen: "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
       Titulo: "Gorra Negra",
@@ -35,6 +35,11 @@ function Home() {
     {
       Imagen: "https://www.ameshop.com.mx/medias/AS-13822254-1.jpg?context=bWFzdGVyfGltYWdlc3wxMjA4MjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhkL2g1ZS8xMjMxODI1MTY0NzAwNi5qcGd8MDIzZTNjY2MxZGIyMWM2NjYxYzZiNTg0NTU2M2U5Y2VmNWI5NTUxZTc4MWQzNWU4MDk1ODI0MTM3ZGRlNWY3OA",
       Titulo: "Gorra Roja",
+      Precio: 12.99,
+    },
+    {
+      Imagen: "https://www.newera.mx/cdn/shop/products/60420084_59FIFTY_WAVE_BOSCEL_OTC_3QL_1024x1024.png?v=1687383266",
+      Titulo: "Kasas City",
       Precio: 12.99,
     },
 

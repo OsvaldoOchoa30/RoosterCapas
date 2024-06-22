@@ -8,6 +8,8 @@ import MarcaUno from "./components/pages/MarcaUno/MarcaUno";
 import AgregarGorra from "./components/pages/AgregarGorra/AgregarGorra";
 import Inventario from "./components/pages/Inventario/Inventario";
 
+import MiCarrito from "./components/pages/MiCarrito/MiCarrito";
+import MisCompras from "./components/pages/MisCompras/MisCompras";
 
 //los nombres de los componentes inician con mayuscula
 
@@ -20,10 +22,13 @@ function App() {
         <Route path="/Login"  element={<Login/>}/> 
         <Route path="/" element={<Home/>}/>
         <Route path="/MarcaUno" element={<MarcaUno/>}/>
+        <Route path="/MiCarrito" element= {<MiCarrito/>} />
+        <Route path="/MisCompras" element= {<MisCompras/>}/>
 
 
         <Route path="/AgregarGorra" element={<AgregarGorra/>}/>
         <Route path="/Inventario" element={<Inventario/>}/>
+        
             
     </Routes>
     </BrowserRouter>
