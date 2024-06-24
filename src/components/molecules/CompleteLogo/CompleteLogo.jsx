@@ -8,7 +8,7 @@ function CompleteLogo() {
   return (
     <div className={styles.container}> 
         <LogoSingIng/> 
-        <TituloLogo/>
+        <TituloLogo titulo="ROOSTER CAPS"/>
         
     </div>
   )

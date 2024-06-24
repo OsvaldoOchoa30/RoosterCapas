@@ -11,6 +11,9 @@ import Inventario from "./components/pages/Inventario/Inventario";
 import MiCarrito from "./components/pages/MiCarrito/MiCarrito";
 import MisCompras from "./components/pages/MisCompras/MisCompras";
 
+import ProductoMultitalla from "./components/pages/ProductoMultitalla/ProductoMultitalla";
+import ProductoUnitalla from "./components/pages/ProductoUnitalla/ProductoUnitalla";
+
 //los nombres de los componentes inician con mayuscula
 
 function App() {
@@ -22,12 +25,17 @@ function App() {
         <Route path="/Login"  element={<Login/>}/> 
         <Route path="/" element={<Home/>}/>
         <Route path="/MarcaUno" element={<MarcaUno/>}/>
+
+        <Route path="/ProductoMultitalla" element={<ProductoMultitalla/>}/>
+        <Route path="/ProductoUnitalla" element={<ProductoUnitalla/>}/>
+
         <Route path="/MiCarrito" element= {<MiCarrito/>} />
         <Route path="/MisCompras" element= {<MisCompras/>}/>
+        <Route path="/Inventario" element={<Inventario/>}/>
 
 
         <Route path="/AgregarGorra" element={<AgregarGorra/>}/>
-        <Route path="/Inventario" element={<Inventario/>}/>
+      
         
             
     </Routes>

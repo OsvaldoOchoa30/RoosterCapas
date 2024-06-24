@@ -1,4 +1,4 @@
-import NavBarGlobal from "../../molecules/NavBarGlobal/NavBarGlobal";
+import NavBarPrincipal from "../../molecules/NavBarPrincipal/NavBarPrincipal";
 import CardCaps from "../../molecules/CardCaps/CardCaps";
 import Footer from "../../molecules/Footer/Footer";
 
@@ -38,7 +38,7 @@ function Home() {
   ];
   return (
     <>
-      <NavBarGlobal />
+      <NavBarPrincipal/>
       <h1>NEW ERA</h1>
       <Container>
       <Row

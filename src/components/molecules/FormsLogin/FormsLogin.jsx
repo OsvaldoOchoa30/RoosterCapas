@@ -4,6 +4,7 @@ import ParrafoRegistro from "../../atoms/ParrafoRegistro/ParrafoRegistro";
 import BottomRegistro from "../../atoms/ButtomRegistro/ButtomRegistro";
 import ImputRegistro from "../../atoms/ImputRegistro/ImputRegistro";
 
+
 import styles from "./FormsLogin.module.css";
 
 import { Form, FormGroup, Col } from "reactstrap";
@@ -31,6 +32,14 @@ function FormsLogin() {
           <FormGroup row style={{ display: "flex", justifyContent: "center" }}>
             <Col sm={10} style={{ display: "flex", justifyContent: "center" }}>
               <BottomRegistro botonRegistro="Iniciar Sesion" />
+            </Col>
+          </FormGroup>
+
+          <ParrafoRegistro registro="Si no tienes cuenta, puedes crear una." />
+
+          <FormGroup row style={{ display: "flex", justifyContent: "center" }}>
+            <Col sm={10} style={{ display: "flex", justifyContent: "center" }}>
+              <BottomRegistro botonRegistro="Registrarse" />
             </Col>
           </FormGroup>
         </Form>
