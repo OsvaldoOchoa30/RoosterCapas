@@ -5,7 +5,8 @@ import BottomRegistro from "../../atoms/ButtomRegistro/ButtomRegistro";
 import TallasCap from "../../molecules/TallasCap/TallasCap";
 import Unitalla from "../../molecules/UnitallaCap/Unitalla";
 
-import { Form, FormGroup, Col, Label, Input } from "reactstrap";
+import { Form, FormGroup, Col, Label, Input, FormText} from "reactstrap";
+
 
 function FormsAddCap() {
   const [selectTalla, setSelectTalla] = useState(""); //states
@@ -28,8 +29,62 @@ function FormsAddCap() {
           </Col>
         </FormGroup>
 
+      
+        <FormGroup row style={{ display: "flex", justifyContent: "center" }}>
+          <Col sm={10}>
+            <ImputRegistro inputText="Descripcion" inputType="text" />
+          </Col>
+        </FormGroup>
+
         <FormGroup>
-          <Label for="exampleSelect">Select</Label>
+          <Label for="exampleSelect">TIPO DE GORRA</Label>
+          <Input
+            id="exampleSelect"
+            name="select"
+            type="select"
+            value={selectTalla}
+            onChange={escojerTalla}
+          >
+            <option>PLANA</option>
+            <option>CURVA</option>
+
+          </Input>
+        </FormGroup>
+
+        <FormGroup>
+          <Label for="exampleSelect">MARCA</Label>
+          <Input
+            id="exampleSelect"
+            name="select"
+            type="select"
+            value={selectTalla}
+            onChange={escojerTalla}
+          >
+            <option>New Era</option>
+            <option>47</option>
+            <option>GOORIN BROS.</option>
+            <option>MR. CROOSBOW</option>
+            <option>DANDY HATS</option>
+          </Input>
+        </FormGroup>
+
+        <FormGroup>
+    <Label for="exampleFile">
+      FOTO
+    </Label>
+    <Input
+      id="exampleFile"
+      name="file"
+      type="file"
+    />
+    <FormText>
+      Este apartado es para subir la foto de tu producto.
+    </FormText>
+  </FormGroup>
+
+
+        <FormGroup>
+          <Label for="exampleSelect">ESTILO DE TALLA</Label>
           <Input
             id="exampleSelect"
             name="select"

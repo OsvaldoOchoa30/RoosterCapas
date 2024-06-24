@@ -1,8 +1,8 @@
 import React from 'react'
 
-function TituloLogo() {
+function TituloLogo({titulo}) {
   return (
-    <h1 >ROOSTER CAPS</h1>
+    <h1 >{titulo}</h1>
   )
 }
 

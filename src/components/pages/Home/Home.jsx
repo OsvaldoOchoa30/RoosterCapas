@@ -1,4 +1,4 @@
-import NavBarGlobal from "../../molecules/NavBarGlobal/NavBarGlobal";
+import NavBarPrincipal from "../../molecules/NavBarPrincipal/NavBarPrincipal";
 import CardCaps from "../../molecules/CardCaps/CardCaps";
 import Footer from "../../molecules/Footer/Footer";
 import Carrusel from "../../molecules/Carrusel/Carrusel";
@@ -46,7 +46,7 @@ function Home() {
   ];
   return (
     <>
-      <NavBarGlobal />
+      <NavBarPrincipal />
       <Carrusel/>
       <h1>NUESTROS PRODUCTOS</h1>
       <Container>
