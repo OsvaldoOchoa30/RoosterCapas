@@ -31,7 +31,7 @@ function FormsLogin() {
 
           <FormGroup row style={{ display: "flex", justifyContent: "center" }}>
             <Col sm={10} style={{ display: "flex", justifyContent: "center" }}>
-              <BottomRegistro botonRegistro="Iniciar Sesion" />
+              <BottomRegistro botonRegistro="Iniciar Sesion"  /> 
             </Col>
           </FormGroup>
 

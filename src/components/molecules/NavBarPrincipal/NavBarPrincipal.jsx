@@ -57,7 +57,9 @@ function NavBarPrincipal(args) {
               <DropdownMenu right>
                 <DropdownItem>PLANAS</DropdownItem>
                 <DropdownItem>CURVAS</DropdownItem>
-                <DropdownItem>REGRESAR</DropdownItem>
+
+            
+                
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>

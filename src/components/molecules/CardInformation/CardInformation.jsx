@@ -34,7 +34,7 @@ function CardInformation({Imagen,  Gorra, Talla, Precio, Cantidad  }) {
         <div className={styles.precio}>
           <TituloRegistro titulo={Precio} />
         </div>
-        {Cantidad === 0 ? <>  <div className={styles.cantidad}>
+        {Cantidad === '0' ? <>  <div className={styles.cantidad}>
           <ButtonDelete/>
         </div></> : <></>}
        

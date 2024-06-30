@@ -8,7 +8,8 @@ import BottomRegistro from "../../atoms/ButtomRegistro/ButtomRegistro";
 
 import styles from "./Caracteristicas.module.css";
 
-function Caracteristicas({nombre, precio, descripcion, imagen} ) {
+function Caracteristicas({nombre, precio, descripcion, imagen,tallas} ) {
+  
   return (
     <>
       <div className={styles.principal}>
@@ -24,7 +25,13 @@ function Caracteristicas({nombre, precio, descripcion, imagen} ) {
           <TituloLogo titulo={nombre}/>
           <TituloRegistro titulo={precio} />
           <ParrafoRegistro registro="TALLA" />
-          <BottomRegistro />
+            {tallas.length >=1 ? <>
+            {tallas.map((talla) =>(
+              <BottomRegistro botonRegistro={talla} />
+            ))}
+            </> : <>
+            <p>unitalla</p>
+            </>}
 
           <ParrafoRegistro registro="CANTIDAD" />
           <ImputRegistro inputText="0" inputType="number" />

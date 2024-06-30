@@ -32,9 +32,9 @@ function Inventario() {
           Precio: 15.99,
         },
         {
-          Imagen: "https://www.ameshop.com.mx/medias/AS-13822254-1.jpg?context=bWFzdGVyfGltYWdlc3wxMjA4MjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhkL2g1ZS8xMjMxODI1MTY0NzAwNi5qcGd8MDIzZTNjY2MxZGIyMWM2NjYxYzZiNTg0NTU2M2U5Y2VmNWI5NTUxZTc4MWQzNWU4MDk1ODI0MTM3ZGRlNWY3OA",
-          Titulo: "Gorra Roja",
-          Precio: 12.99,
+          Imagen: "https://www.newera.mx/cdn/shop/products/60298842_1024x1024.png?v=1685653699",
+          Titulo: "Gorra New Era Floral",
+          Precio: 16.99,
         },
     
       ];
@@ -48,7 +48,7 @@ function Inventario() {
     <h1>INVENTARIO ROOSTER CAPS</h1>
     <Container>
         <Row
-        lg = "3"
+        lg = "5"
         md="3"
         sm="2"
         xs="1"
