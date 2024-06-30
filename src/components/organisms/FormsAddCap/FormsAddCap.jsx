@@ -98,7 +98,7 @@ function FormsAddCap() {
         </FormGroup>
 
         <FormGroup> 
-          {selectTalla === "multitalla" ? ( //Operadores Ternarios
+          {selectTalla === "unitalla" ? ( //Operadores Ternarios
             <>
               <TallasCap />
             </>

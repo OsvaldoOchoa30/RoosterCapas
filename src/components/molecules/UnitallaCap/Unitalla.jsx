@@ -7,7 +7,7 @@ function Unitalla() {
   return (
     <div style={{justifyContent: "center", display:"flex"}}>
         <div style={{width:"15em",display:'flex', margin:"20px"}}>
-        <ParrafoRegistro registro="Unitalla"/>
+        <ParrafoRegistro registro="Multitalla"/>
         <ImputRegistro Input inputText="0" inputType="number"/>
         </div>
     </div>
