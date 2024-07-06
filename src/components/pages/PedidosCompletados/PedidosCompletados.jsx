@@ -2,27 +2,28 @@ import React from 'react'
 import CardData from '../../molecules/CardData/CardData'
 import NavBarGlobal from '../../molecules/NavBarGlobal/NavBarGlobal'
 
-function PedidosenProceso() {
+
+function PedidosCompletados() {
     const cartaInormacion = [
         {
             Usuario: "Osvaldo Ochoa",
             FechaPedido: "Fecha de Peidio: 20/06/2024",
             FechaEntrega: "Fecha de Entrega: 27/06/2024",
-            Total: "$1,500.00",
+            Total: "Completado",
             
         },
         {
             Usuario: "Fredy de la rosa",
             FechaPedido: "Fecha de Peidio: 20/06/2024",
             FechaEntrega: "Fecha de Entrega: 24/06/2024",
-            Total: "$1,500.00",
+            Total: "Cancelado",
             
         },
         {
-            Usuario: "Osvaldo Ochoa",
+            Usuario: "Bruno Blanco",
             FechaPedido: "Fecha de Peidio: 20/06/2024",
             FechaEntrega: "Fecha de Entrega: 25/06/2024",
-            Total: "$1,500.00",
+            Total: "Cancelado",
             
         },
     ]
@@ -33,7 +34,8 @@ function PedidosenProceso() {
     <div style={{
         display: "block",
         justifyContent:"center",
-        flexDirection: "column"
+        flexDirection: "column",
+        marginTop: "80px"
     }}>
     {cartaInormacion.map((data) => (
         <div style={{
@@ -56,4 +58,5 @@ function PedidosenProceso() {
   )
 }
 
-export default PedidosenProceso
+
+export default PedidosCompletados
