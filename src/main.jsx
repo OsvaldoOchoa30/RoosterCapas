@@ -15,6 +15,8 @@ import MiCarrito from "./components/pages/MiCarrito/MiCarrito";
 import MisCompras from "./components/pages/MisCompras/MisCompras";
 import VerGorraCliente from "./components/pages/VerGorraCliente/VerGorraCliente";
 
+import VerGorraAdmin from "./components/pages/VerGorraAdmin/VerGorraAdmin";
+
 import PedidosCompletados from "./components/pages/PedidosCompletados/PedidosCompletados";
 import PedidosenProceso from "./components/pages/PedidosenProceso/PedidosenProceso";
 import VerPedidosenProceso from "./components/pages/VerPedidosenProceso/VerPedidosenProceso";
@@ -89,6 +91,11 @@ const pages = createBrowserRouter([
     //Agregar Gorras
     path: "/agregargorra",
     element: <AgregarGorra />,
+  },
+  {
+    //Agregar Gorras
+    path: "/gorraadmin",
+    element: <VerGorraAdmin/>,
   },
 ]);
 

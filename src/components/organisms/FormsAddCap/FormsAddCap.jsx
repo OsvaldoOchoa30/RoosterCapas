@@ -30,11 +30,18 @@ function FormsAddCap() {
         </FormGroup>
 
       
-        <FormGroup row style={{ display: "flex", justifyContent: "center" }}>
-          <Col sm={10}>
-            <ImputRegistro inputText="Descripcion" inputType="text" />
-          </Col>
-        </FormGroup>
+        <FormGroup>
+    <Label for="exampleText">
+      
+    </Label>
+    <Input
+      id="exampleText"
+      name="text"
+      type="textarea"
+      placeholder="Descripcion"
+    />
+  </FormGroup>
+
 
         <FormGroup>
           <Label for="exampleSelect">TIPO DE GORRA</Label>
@@ -45,6 +52,7 @@ function FormsAddCap() {
             value={selectTalla}
             onChange={escojerTalla}
           >
+            <option>Tipo de Gorra</option>
             <option>PLANA</option>
             <option>CURVA</option>
 
@@ -60,6 +68,7 @@ function FormsAddCap() {
             value={selectTalla}
             onChange={escojerTalla}
           >
+            <option>Marca</option>
             <option>New Era</option>
             <option>47</option>
             <option>GOORIN BROS.</option>
@@ -92,6 +101,7 @@ function FormsAddCap() {
             value={selectTalla}
             onChange={escojerTalla}
           >
+            <option>Tipo de Talla</option>
             <option value="multitalla">Multitalla</option>
             <option value="unitalla">Unitalla</option>
           </Input>
