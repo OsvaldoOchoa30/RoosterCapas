@@ -9,7 +9,7 @@ import {
 
 function CardCaps({ nombreCap, Precio, Imagen }) {
   return (
-    <a href="/Login">
+    <a href="/Login" style={{textDecoration:'none'}}>
       <Card
         style={{
           display: "flex",

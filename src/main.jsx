@@ -27,6 +27,9 @@ import PedidosPendientes from "./components/pages/PedidosPendientes/PedidosPendi
 import AgregarGorra from "./components/pages/AgregarGorra/AgregarGorra";
 import Inventario from "./components/pages/Inventario/Inventario";
 
+import HomeAdmin from "./components/pages/HomeAdmin/HomeAdmin";
+import Ventas from "./components/pages/Ventas/Ventas";
+
 const pages = createBrowserRouter([
   {
     //HOME
@@ -99,6 +102,17 @@ const pages = createBrowserRouter([
     path: "/gorraadmin",
     element: <VerGorraAdmin/>,
   },
+  {
+    //Agregar Gorras
+    path: "/ventas",
+    element: <Ventas/>,
+  },
+  {
+    //Agregar Gorras
+    path: "/admin",
+    element: <HomeAdmin/>,
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
