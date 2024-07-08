@@ -25,7 +25,9 @@ function NavBarGlobal() {
       dark
       fixed='top'
       >
-        <NavbarBrand href="/"><img src={LogoSingIn} alt="ROSTER CAPS" height="70" /></NavbarBrand> //modificandose
+        <NavbarBrand href="/">
+        <img src={LogoSingIn} alt="ROSTER CAPS" style={{height: "60px"}} />
+        </NavbarBrand> //modificandose
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
