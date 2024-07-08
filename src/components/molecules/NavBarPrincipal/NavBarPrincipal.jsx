@@ -23,8 +23,9 @@ function NavBarPrincipal(args) {
 
   return (
     <div>
-      <Navbar className="navbar-dark bg-dark navbar-expand-lg" {...args}>
-      <NavbarBrand href="/"><img src={LogoSingIn} alt="ROSTER CAPS" height="70" /></NavbarBrand>
+      <Navbar className="navbar-dark bg-dark navbar-expand-lg" {...args}
+      fixed='top'>
+      <NavbarBrand href="/"><img src={LogoSingIn} alt="ROSTER CAPS" style={{height: "50px"}} /></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>

@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import {NextUIProvider} from '@nextui-org/react'
+
 //import App from './App.jsx'
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -14,6 +16,8 @@ import MarcaUno from "./components/pages/MarcaUno/MarcaUno";
 import MiCarrito from "./components/pages/MiCarrito/MiCarrito";
 import MisCompras from "./components/pages/MisCompras/MisCompras";
 import VerGorraCliente from "./components/pages/VerGorraCliente/VerGorraCliente";
+
+import VerGorraAdmin from "./components/pages/VerGorraAdmin/VerGorraAdmin";
 
 import PedidosCompletados from "./components/pages/PedidosCompletados/PedidosCompletados";
 import PedidosenProceso from "./components/pages/PedidosenProceso/PedidosenProceso";
@@ -90,10 +94,17 @@ const pages = createBrowserRouter([
     path: "/agregargorra",
     element: <AgregarGorra />,
   },
+  {
+    //Agregar Gorras
+    path: "/gorraadmin",
+    element: <VerGorraAdmin/>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <NextUIProvider>
     <RouterProvider router={pages} />
+    </NextUIProvider>
   </React.StrictMode>
 );

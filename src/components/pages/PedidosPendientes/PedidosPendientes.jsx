@@ -45,7 +45,8 @@ function PedidosPendientes() {
           fechaPedido={data.FechaPedido}
           fechaEntrega={data.FechaEntrega}          
           total={data.Total}
-          boton="Asignar Fecha"
+          calendario="calendario"
+          
 
         />
          </div>
