@@ -1,5 +1,6 @@
 import React from 'react'
 import CardInformation from '../../molecules/CardInformation/CardInformation'
+import NavBarPrincipal from '../../molecules/NavBarPrincipal/NavBarPrincipal';
 import styles from "./Compras.module.css"
 
 function MisCompras() {
@@ -50,12 +51,12 @@ function MisCompras() {
   ];
 
 
-
-
-
-  
   return (
     <>
+      <div className={styles.principal}>
+    <NavBarPrincipal/>
+    </div>
+
     <div className={styles.principal}>
     {caps.map((cap) => (
       <div className={styles.secundario}> 
@@ -65,6 +66,7 @@ function MisCompras() {
         Precio={cap.Precio}
         Imagen={cap.Imagen}
         Cantidad={cap.Cantidad}
+        
       />
       </div>
     ))}

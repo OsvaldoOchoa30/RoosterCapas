@@ -10,11 +10,13 @@ function CardInformation({Imagen,  Gorra, Talla, Precio, Cantidad  }) {
     <Card style={{ width: "60em", margin: "10px" }}>
       <div className={styles.contenedor}>
         <div className={styles.imagen}>
+        <a href="vergorra"> {/*Aqui esta la ruta, para que no te pierdas */}
           <img
             src={Imagen}
             alt="Gorra XD"
             width="200px"
           />
+          </a>
         </div>
 
         <div className={styles.datos}>

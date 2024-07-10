@@ -1,5 +1,6 @@
 import React from 'react'
 import CardInformation from '../../molecules/CardInformation/CardInformation';
+import NavBarPrincipal from '../../molecules/NavBarPrincipal/NavBarPrincipal';
 import styles from "./MiCarrito.module.css"
 
 
@@ -56,6 +57,9 @@ function MiCarrito() {
   
   return (
     <>
+    <div>
+    <NavBarPrincipal/>
+    </div>
     <div className={styles.principal}>
     {caps.map((cap) => (
       <div className={styles.secundario}> 

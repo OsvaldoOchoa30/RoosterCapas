@@ -2,9 +2,11 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 100px;
 }
 
 .secundario{
     display: flex;
     justify-content: center;
 }
+

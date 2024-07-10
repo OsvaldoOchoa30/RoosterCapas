@@ -35,7 +35,10 @@ function Caracteristicas({nombre, precio, descripcion, imagen,tallas} ) {
 
           <ParrafoRegistro registro="CANTIDAD" />
           <ImputRegistro inputText="0" inputType="number" />
-          <BottomRegistro botonRegistro="AGREGAR CARRITO" />
+          <BottomRegistro
+          botonRegistro="AGREGAR CARRITO" 
+          pagina="/carrito"
+          />
         </div>
       </div>
     </>

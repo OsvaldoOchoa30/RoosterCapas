@@ -31,7 +31,10 @@ function FormsLogin() {
 
           <FormGroup row style={{ display: "flex", justifyContent: "center" }}>
             <Col sm={10} style={{ display: "flex", justifyContent: "center" }}>
-              <BottomRegistro botonRegistro="Iniciar Sesion"  /> 
+              <BottomRegistro 
+              botonRegistro="Iniciar Sesion"  
+              pagina="/"
+              /> 
             </Col>
           </FormGroup>
 
@@ -39,7 +42,9 @@ function FormsLogin() {
 
           <FormGroup row style={{ display: "flex", justifyContent: "center" }}>
             <Col sm={10} style={{ display: "flex", justifyContent: "center" }}>
-              <BottomRegistro botonRegistro="Registrarse" />
+              <BottomRegistro 
+              botonRegistro="Registrarse"
+              pagina="/registro"/>
             </Col>
           </FormGroup>
         </Form>

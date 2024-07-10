@@ -45,7 +45,10 @@ function FormsRegistro() {
 
         <FormGroup row style={{display:'flex',justifyContent:'center'}}>
         <Col sm={10} style={{display:'flex',justifyContent:'center'}}>
-        <ButtoomRegistro botonRegistro="Registrarse"/>
+        <ButtoomRegistro 
+        botonRegistro="Registrarse"
+        pagina="/login" 
+        />
         </Col>
         </FormGroup>
 

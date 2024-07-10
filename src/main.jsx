@@ -63,7 +63,7 @@ const pages = createBrowserRouter([
   },
   {
     //Ver Gorra Cliente
-    path: "/gorracliente",
+    path: "/vergorra",
     element: <VerGorraCliente />,
   },
   {
