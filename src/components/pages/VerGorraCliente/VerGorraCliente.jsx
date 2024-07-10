@@ -20,7 +20,9 @@ function VerGorraCliente() {
 
   return (
     <div>
+      <div>
       <NavBarPrincipal />
+      </div>
       {gorras.map((gorras) => (
         <Caracteristicas
           nombre={gorras.Titulo}

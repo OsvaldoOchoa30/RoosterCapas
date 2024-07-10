@@ -30,10 +30,10 @@ function NavBarPrincipal(args) {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Mis Compras</NavLink>
+              <NavLink href="/miscompras">Mis Compras</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
+              <NavLink href="/carrito">
                 Mi Carrito
               </NavLink>
             </NavItem>
@@ -42,13 +42,11 @@ function NavBarPrincipal(args) {
                 Marcas
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>NEW ERA</DropdownItem>
+                <DropdownItem href="/marcauno">NEW ERA</DropdownItem>
                 <DropdownItem>47</DropdownItem>
                 <DropdownItem>GOORIN BROS.</DropdownItem>
                 <DropdownItem>MR. CROOSBOW</DropdownItem>
                 <DropdownItem>DANDY HATS</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>REGRESAR</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
