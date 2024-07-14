@@ -67,7 +67,7 @@ function Carrusel(args) {
   });
 
   return (
-    <div style={{display:"flex",justifyContent:'center',marginTop:'8em', marginBottom:'8em'}}>
+    <div style={{display:"flex",justifyContent:'center',marginTop:'8em', marginBottom:'4em'}}>
       <Carousel
         activeIndex={activeIndex}
         next={next}

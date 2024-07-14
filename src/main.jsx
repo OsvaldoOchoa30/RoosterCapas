@@ -12,7 +12,8 @@ import Home from "./components/pages/Home/Home";
 import Registro from "./components/pages/Registro/Registro";
 import Login from "./components/pages/Login/Login"; //Pendiente
 
-import MarcaUno from "./components/pages/MarcaUno/MarcaUno";
+
+
 import MiCarrito from "./components/pages/MiCarrito/MiCarrito";
 import MisCompras from "./components/pages/MisCompras/MisCompras";
 import VerGorraCliente from "./components/pages/VerGorraCliente/VerGorraCliente";
@@ -30,6 +31,13 @@ import Inventario from "./components/pages/Inventario/Inventario";
 import HomeAdmin from "./components/pages/HomeAdmin/HomeAdmin";
 import Ventas from "./components/pages/Ventas/Ventas";
 
+import MarcaNewEra from "./components/pages/MarcaNewEra/MarcaNewEra";
+import Marca47 from "./components/pages/Marca47/Marca47";
+import MarcaGorinBros from "./components/pages/MarcaGorinBros/MarcaGorinBros";
+import MarcaMrKash from "./components/pages/MarcaMrKash/MarcaMrKash";
+import MarcaDandyHats from "./components/pages/MarcaDandyHats/MarcaDandyHats";
+
+
 const pages = createBrowserRouter([
   {
     //HOME
@@ -45,11 +53,6 @@ const pages = createBrowserRouter([
     //Login
     path: "/login",
     element: <Login />,
-  },
-  {
-    //Marca Uno (New Era)
-    path: "/marcauno",
-    element: <MarcaUno />,
   },
   {
     //Carrito de Apartados
@@ -112,6 +115,32 @@ const pages = createBrowserRouter([
     path: "/admin",
     element: <HomeAdmin/>,
   },
+  {
+    //New Era
+    path: "/newera",
+    element: <MarcaNewEra/>
+  },
+  {
+    //47
+    path: "/47caps",
+    element: <Marca47/>
+  },
+  {
+    //Gorin Bros
+    path: "/gorinbros",
+    element: <MarcaGorinBros/>
+  },
+  {
+    //Mr Kash
+    path: "/mrkash",
+    element: <MarcaMrKash/>
+  },
+  {
+    //Dandy Caps
+    path: "/dandyhats",
+    element: <MarcaDandyHats/>
+  },
+  
 
 ]);
 

@@ -39,9 +39,9 @@ function VerGorraAdmin() {
       Price: "19.00",
       Description: "Gorra edicion especial de la final NBA 2024",
       Image: "https://www.newera.mx/cdn/shop/products/60298842_1024x1024.png?v=1685653699",
-      Type: "Plana",
+      Type: "Curva",
       Brand: "New Era",
-      Talla: "unitalla",
+      Talla: "multitalla",
       Cantidad: [10,24,12,2,3]
     },
   ];
