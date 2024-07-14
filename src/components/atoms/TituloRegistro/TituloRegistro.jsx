@@ -1,5 +1,4 @@
 import React from 'react'
-
 import styles from './TituloRegistro.module.css'
 
 function TituloRegistro({titulo}) {
