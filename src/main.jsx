@@ -8,34 +8,40 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from "./components/pages/Home/Home";
+//Login y Registro
 import Registro from "./components/pages/Registro/Registro";
 import Login from "./components/pages/Login/Login"; //Pendiente
 
-
-
+//Cliente
+import Home from "./components/pages/Home/Home";
 import MiCarrito from "./components/pages/MiCarrito/MiCarrito";
 import MisCompras from "./components/pages/MisCompras/MisCompras";
 import VerGorraCliente from "./components/pages/VerGorraCliente/VerGorraCliente";
 
+import HomeAdmin from "./components/pages/HomeAdmin/HomeAdmin";
+import Inventario from "./components/pages/Inventario/Inventario";
 import VerGorraAdmin from "./components/pages/VerGorraAdmin/VerGorraAdmin";
+import AgregarGorra from "./components/pages/AgregarGorra/AgregarGorra";
 
-import PedidosCompletados from "./components/pages/PedidosCompletados/PedidosCompletados";
+import PedidosPendientes from "./components/pages/PedidosPendientes/PedidosPendientes";
 import PedidosenProceso from "./components/pages/PedidosenProceso/PedidosenProceso";
 import VerPedidosenProceso from "./components/pages/VerPedidosenProceso/VerPedidosenProceso";
-import PedidosPendientes from "./components/pages/PedidosPendientes/PedidosPendientes";
-
-import AgregarGorra from "./components/pages/AgregarGorra/AgregarGorra";
-import Inventario from "./components/pages/Inventario/Inventario";
-
-import HomeAdmin from "./components/pages/HomeAdmin/HomeAdmin";
+import PedidosCompletados from "./components/pages/PedidosCompletados/PedidosCompletados";
 import Ventas from "./components/pages/Ventas/Ventas";
+
+
+
 
 import MarcaNewEra from "./components/pages/MarcaNewEra/MarcaNewEra";
 import Marca47 from "./components/pages/Marca47/Marca47";
 import MarcaGorinBros from "./components/pages/MarcaGorinBros/MarcaGorinBros";
 import MarcaMrKash from "./components/pages/MarcaMrKash/MarcaMrKash";
 import MarcaDandyHats from "./components/pages/MarcaDandyHats/MarcaDandyHats";
+
+import GorraCurva from "./components/pages/GorraCurva/GorraCurva";
+import GorraPlana from "./components/pages/GorraPlana/GorraPlana";
+
+
 
 
 const pages = createBrowserRouter([
@@ -71,7 +77,7 @@ const pages = createBrowserRouter([
   },
   {
     //Pedidos Pendientes Admin
-    path: "/pedidospendientes",
+    path: "/pedidosnuevos",
     element: <PedidosPendientes />,
   },
 
@@ -127,7 +133,7 @@ const pages = createBrowserRouter([
   },
   {
     //Gorin Bros
-    path: "/gorinbros",
+    path: "/goorinbros",
     element: <MarcaGorinBros/>
   },
   {
@@ -139,6 +145,16 @@ const pages = createBrowserRouter([
     //Dandy Caps
     path: "/dandyhats",
     element: <MarcaDandyHats/>
+  },
+  {
+    //Planas
+    path: "/planas",
+    element: <GorraPlana/>
+  },
+  {
+    //Curvas
+    path: "/curvas",
+    element: <GorraCurva/>
   },
   
 

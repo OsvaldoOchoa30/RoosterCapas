@@ -1,6 +1,8 @@
 import React from 'react'
 import CardInformation from '../../molecules/CardInformation/CardInformation'
 import NavBarPrincipal from '../../molecules/NavBarPrincipal/NavBarPrincipal';
+import Footer from '../../molecules/Footer/Footer';
+import TituloLogo from '../../atoms/TituloLogo/TituloLogo';
 import styles from "./Compras.module.css"
 
 function MisCompras() {
@@ -57,6 +59,10 @@ function MisCompras() {
     <NavBarPrincipal/>
     </div>
 
+<div className={styles.titulo}>
+    <TituloLogo titulo="Mis Compras"/>
+    </div>
+
     <div className={styles.principal}>
     {caps.map((cap) => (
       <div className={styles.secundario}> 
@@ -70,10 +76,8 @@ function MisCompras() {
       />
       </div>
     ))}
-
-    
-    
     </div>
+    <Footer/>
     </>
   )
 }

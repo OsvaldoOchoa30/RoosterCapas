@@ -6,9 +6,11 @@ import TituloLogo from "../../atoms/TituloLogo/TituloLogo";
 
 import { Container, Row } from "reactstrap";
 
-import styles from './MarcaMrKash.module.css'
+import styles from "./GorraPlana.module.css"
 
-function MarcaMrKash() {
+
+
+function GorraPlana() {
     const gorras = [
         {
           Imagen:
@@ -27,34 +29,34 @@ function MarcaMrKash() {
       ];
   return (
     <>
-      <div className={styles.nav}>
-        <NavBarPrincipal />
-      </div>
-      <div className={styles.title}>
-        <TituloLogo titulo="Mr. Kash" />
-      </div>
-      <Container>
-        <Row
-          lg="5"
-          md="3"
-          sm="2"
-          xs="1"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
-          {gorras.map((gorra) => (
-            <CardCaps
-              nombreCap={gorra.Titulo}
-              Precio={gorra.Precio}
-              Imagen={gorra.Imagen}
-              link={gorra.Link}
-            />
-          ))}
-        </Row>
-      </Container>
+    <div className={styles.nav}>
+      <NavBarPrincipal />
+    </div>
+    <div className={styles.title}>
+      <TituloLogo titulo="Gorras Planas" />
+    </div>
+    <Container>
+      <Row
+        lg="5"
+        md="3"
+        sm="2"
+        xs="1"
+        style={{ display: "flex", justifyContent: "center" }}
+      >
+        {gorras.map((gorra) => (
+          <CardCaps
+            nombreCap={gorra.Titulo}
+            Precio={gorra.Precio}
+            Imagen={gorra.Imagen}
+            link={gorra.Link}
+          />
+        ))}
+      </Row>
+    </Container>
 
-      <Footer />
-    </>
+    <Footer />
+  </>
   )
 }
 
-export default MarcaMrKash
+export default GorraPlana

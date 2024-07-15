@@ -14,30 +14,41 @@ function Caracteristicas({nombre, precio, descripcion, imagen,tallas} ) {
     <>
       <div className={styles.principal}>
         <div className={styles.div1}>
-          <img
+          <img className={styles.img}
             src={imagen}
             alt=""
           />
+          <div className={styles.description}>
           <ParrafoRegistro registro= {descripcion} />
+          </div>
         </div>
 
-        <div className={styles.div1}>
+        <div className={styles.div2}>
           <TituloLogo titulo={nombre}/>
           <TituloRegistro titulo={precio} />
-          <ParrafoRegistro registro="TALLA" />
+          <div>
+          <ParrafoRegistro 
+           registro="TALLA" />
             {tallas.length >=1 ? <>
             {tallas.map((talla) =>(
               <BottomRegistro botonRegistro={talla} />
             ))}
             </> : <>
-            <p>unitalla</p>
+            <p>Unitalla</p>
             </>}
+            </div>
 
+<div>
           <ParrafoRegistro registro="CANTIDAD" />
           <ImputRegistro inputText="0" inputType="number" />
+          </div>
           <BottomRegistro
           botonRegistro="AGREGAR CARRITO" 
           pagina="/carrito"
+          color="dark"
+          height="40px"
+          width="390px"
+          
           />
         </div>
       </div>
