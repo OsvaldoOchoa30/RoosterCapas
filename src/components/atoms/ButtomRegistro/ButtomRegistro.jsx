@@ -3,12 +3,16 @@ import React from 'react'
 import { Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-import styles from './ButtomRegistro.module.css'
 
-function BottomRegistro({botonRegistro, pagina}) {
+
+function BottomRegistro({botonRegistro, pagina, color, height, width }) {
   return (
+    
     <Link to={pagina}>
-    <Button className={styles.button}>{botonRegistro}</Button>
+    <Button
+    style={{height, width}}
+    color={color}
+    >{botonRegistro}</Button>
     </Link>
   )
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import LogoSingIn from '../../../assets/logoOficial.png' //En el apartado de la imagen, no lo pone en automatico
-
+import logo from "../../../assets/logoOficial.png"
 import {
   Collapse,
   Navbar,
@@ -16,50 +15,78 @@ import {
   NavbarText,
 } from 'reactstrap';
 
-function NavBarGlobal() {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
+import { HiCurrencyDollar } from "react-icons/hi2";
+import { MdAccountCircle } from "react-icons/md";
+import { FaBoxOpen } from "react-icons/fa";
+
+import styles from "./NavBarGlobal.module.css"
+
+function NavBarGlobal(args) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
-      <Navbar
-      color='dark'
-      dark
-      fixed='top'
-      >
-        <NavbarBrand href="/">
-        <img src={LogoSingIn} alt="ROSTER CAPS" style={{height: "60px"}} />
-        </NavbarBrand> //modificandose
+    <div className={styles.nav} >
+      <Navbar className="navbar-dark bg-dark navbar-expand-lg"  {...args}
+      fixed='top'>
+        <NavbarBrand href="/admin"><img src={logo} alt="ROSTER CAPS" style={{height: "50px"}} /></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
-            <NavItem>
-              <NavLink href="">Iniciar Sesion</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="">Registrarse</NavLink>
-            </NavItem>
-
-
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
+          <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                MARCAS
+                Pedidos
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>NEW ERA</DropdownItem>
-                <DropdownItem>47</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
+                <DropdownItem href="/pedidosnuevos">Nuevos</DropdownItem>
+                <DropdownItem href="/pedidosenproceso">En Proceso</DropdownItem>
+                <DropdownItem href="/pedidoscompletados">Concluidos</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
+
+            <NavItem>
+              <NavLink href="/agregargorra">Agregar Producto</NavLink>
+            </NavItem>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+
+          <NavItem>
+              <NavLink href="/inventario">
+              <FaBoxOpen
+              color='white'   
+              size="35px"
+              style={{marginLeft:"-96px", position:"absolute", bottom:"19px", width:"34px"}}
+              />
+              </NavLink>
+            </NavItem>
+          
+          <NavItem>
+              <NavLink href="/ventas">
+              <HiCurrencyDollar
+              color='white'   
+              size="35px"
+              style={{marginLeft:"-100px", position:"absolute", bottom:"20px", width:"100px"}}
+              />
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink href=" ">
+              {/*Este es el icono del Perfil, falta rutearlo*/}
+              <MdAccountCircle 
+              color='white'
+              size="35px"
+              style={{marginLeft:"-40px", position:"absolute", bottom:"20px"}}
+              />
+              </NavLink>
+            </NavItem>
+
+
+          <NavbarText>ROOSTER CAPS</NavbarText>
         </Collapse>
       </Navbar>
-  )
+    </div>
+  );
 }
 
-export default NavBarGlobal
+export default NavBarGlobal;

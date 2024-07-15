@@ -8,8 +8,8 @@ function VerGorraCliente() {
   const gorras = [
     {
       Imagen:
-        "https://www.newera.mx/cdn/shop/products/60298842_1024x1024.png?v=1685653699",
-      Titulo: "Gorra Negra",
+        "https://www.newera.mx/cdn/shop/files/60571871_59FIFTY_5950DAY595021803_CHIBUL_HGR_3QL_720x.png?v=1715043025",
+      Titulo: "Chicago Bulls NBA 70th Anniversary",
       Precio: 15.99,
       Descripcion:
         "Descubre la elegancia y el estilo único de la Gorra New Era de los Yankees con Rosas. Esta gorra es una combinación perfecta de pasión deportiva y un toque de delicadeza floral, ideal para los aficionados que desean destacar en cualquier ocasión.",
@@ -23,6 +23,8 @@ function VerGorraCliente() {
       <div>
       <NavBarPrincipal />
       </div>
+
+      <div>
       {gorras.map((gorras) => (
         <Caracteristicas
           nombre={gorras.Titulo}
@@ -32,6 +34,7 @@ function VerGorraCliente() {
           tallas={gorras.tallas}
         />
       ))}
+      </div>
       <Footer />
     </div>
   );

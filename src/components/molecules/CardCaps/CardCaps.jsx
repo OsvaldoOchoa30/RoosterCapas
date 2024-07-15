@@ -7,9 +7,9 @@ import {
   Button,
 } from "reactstrap";
 
-function CardCaps({ nombreCap, Precio, Imagen }) {
+function CardCaps({ nombreCap, Precio, Imagen, link }) {
   return (
-    <a href="/Login" style={{textDecoration:'none'}}>
+    <a href={link} style={{textDecoration:'none'}}>
       <Card
         style={{
           display: "flex",

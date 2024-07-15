@@ -48,7 +48,7 @@ function NavBarPrincipal(args) {
               <DropdownMenu right>
                 <DropdownItem href="/newera">New Era</DropdownItem>
                 <DropdownItem href='/47caps'>47 Caps</DropdownItem>
-                <DropdownItem href='/gorinbros'>Goorin Bros.</DropdownItem>
+                <DropdownItem href='/goorinbros'>Goorin Bros.</DropdownItem>
                 <DropdownItem href='/mrkash'>Mr. Kash</DropdownItem>
                 <DropdownItem href='/dandyhats'>Dandy Hats</DropdownItem>
               </DropdownMenu>
@@ -58,8 +58,8 @@ function NavBarPrincipal(args) {
                 Disenos
               </DropdownToggle>
               <DropdownMenu right>
-                <DropdownItem>Planas</DropdownItem>
-                <DropdownItem>Curvas</DropdownItem>
+                <DropdownItem href='/planas'>Planas</DropdownItem>
+                <DropdownItem href='/curvas'>Curvas</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
 
