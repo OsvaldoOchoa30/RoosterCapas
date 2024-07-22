@@ -1,13 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { Input } from 'reactstrap';
+import styles from './ImputRegistro.module.css';
 
-import {Input} from "reactstrap"
-
-import styles from './ImputRegistro.module.css'
-
-function ImputRegistro({inputText, inputType}) {
+function ImputRegistro({ inputText, inputType, name, value, onChange, onBlur, error }) {
+  
   return (
-    <Input className={styles.input} type ={inputType} placeholder={inputText} />
-  )
+    <div>
+      <Input
+        
+        type={inputType}
+        placeholder={inputText}
+        name={name}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        style={{ borderColor: error ? 'red' : 'black' }}
+      />
+      {error && <p className={styles.error}>{error}</p>}
+    </div>
+  );
 }
 
-export default ImputRegistro
+export default ImputRegistro;
