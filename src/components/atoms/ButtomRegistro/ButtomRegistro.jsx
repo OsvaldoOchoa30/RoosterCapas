@@ -1,20 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { Button } from 'reactstrap';
 
-import { Button } from 'reactstrap'
-import { Link } from 'react-router-dom'
+function BottomRegistro({ botonRegistro, onClickF, color, height, width, page, key}) {
 
+  
 
-
-function BottomRegistro({botonRegistro, pagina, color, height, width }) {
   return (
-    
-    <Link to={pagina}>
     <Button
-    style={{height, width}}
-    color={color}
-    >{botonRegistro}</Button>
-    </Link>
-  )
+      style={{ height, width }}
+      color={color}
+      onClick={onClickF}
+      pagina = {page}
+    >
+      {botonRegistro}
+    </Button>
+  );
 }
 
-export default BottomRegistro
+export default BottomRegistro;

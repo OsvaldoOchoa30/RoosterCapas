@@ -7,9 +7,14 @@ import Unitalla from "../../molecules/UnitallaCap/Unitalla";
 import { Form, FormGroup, Col, Label, Input, FormText } from "reactstrap";
 
 function VerGorraAdmin() {
+  const [nombre, setNombre] = useState(' ');
   const [selectTalla, setSelectTalla] = useState(""); // State para el select de tipo de gorra
   const [selectMarca, setSelectMarca] = useState(""); // State para el select de marcas
   const [selectType, setSelectType] = useState("");
+
+  const  handleName = (e) => {
+      setNombre(e.target.value)
+  }
 
   const escojerTalla = (event) => {
     setSelectTalla(event.target.value);
@@ -38,11 +43,12 @@ function VerGorraAdmin() {
       Name: "Dallas Maverics Road to the Final",
       Price: "19.00",
       Description: "Gorra edicion especial de la final NBA 2024",
-      Image: "https://www.newera.mx/cdn/shop/products/60298842_1024x1024.png?v=1685653699",
+      Image:
+        "https://www.newera.mx/cdn/shop/products/60298842_1024x1024.png?v=1685653699",
       Type: "Curva",
       Brand: "New Era",
       Talla: "multitalla",
-      Cantidad: [10,24,12,2,3]
+      Cantidad: [10, 24, 12, 2, 3],
     },
   ];
   console.log("talla select:", selectTalla);
@@ -61,7 +67,8 @@ function VerGorraAdmin() {
                 style={{ display: "flex", justifyContent: "center" }}
               >
                 <Col sm={10}>
-                  <ImputRegistro inputText={cap.Name} inputType="texto" />
+                  <ImputRegistro inputText={cap.Name} inputType="text" 
+                  onChange={handleName}/>
                 </Col>
               </FormGroup>
 
@@ -118,9 +125,10 @@ function VerGorraAdmin() {
 
               <FormGroup>
                 <Label for="exampleFile">FOTO</Label>
-                <Input id="exampleFile" name="file" type="file" />
+                <Input id="exampleFile" name="file" type="file" src={cap.Image}/>
                 <FormText>Este apartado es actualizar la foto actual.</FormText>
               </FormGroup>
+
               {cap.Talla === "unitalla" ? (
                 <>
                   <FormGroup>
@@ -148,8 +156,8 @@ function VerGorraAdmin() {
                       value={selectTalla}
                       onChange={escojerTalla}
                     >
-                      <option value="multitalla">Multitalla</option>
                       <option value="unitalla">Unitalla</option>
+                      <option value="multitalla">Multitalla</option>
                     </Input>
                   </FormGroup>
                 </>
@@ -158,26 +166,24 @@ function VerGorraAdmin() {
                 <>
                   {cap.Talla === "unitalla" ? (
                     <>
-                      <Unitalla 
-                      quantity={cap.Cantidad[0]}
+                      <TallasCap
+                        q1={cap.Cantidad[0]}
+                        q2={cap.Cantidad[1]}
+                        q3={cap.Cantidad[2]}
+                        q4={cap.Cantidad[3]}
+                        q5={cap.Cantidad[4]}
                       />
                     </>
                   ) : (
                     <>
-                      <TallasCap
-                      q1={cap.Cantidad[0]}
-                      q2={cap.Cantidad[1]}
-                      q3={cap.Cantidad[2]}
-                      q4={cap.Cantidad[3]}
-                      q5={cap.Cantidad[4]}
-                      />
+                      <Unitalla quantity={cap.Cantidad[0]} />
                     </>
                   )}
                 </>
               ) : (
                 <>
                   <FormGroup>
-                    {selectTalla === "unitalla" ? <Unitalla /> : <TallasCap />}
+                    {selectTalla === "unitalla" ? <TallasCap /> : <Unitalla />}
                   </FormGroup>
                 </>
               )}
