@@ -3,6 +3,15 @@ import CardCaps from "../../molecules/CardCaps/CardCaps";
 import Footer from "../../molecules/Footer/Footer";
 import Carrusel from "../../molecules/Carrusel/Carrusel";
 
+import cardNewEra from '../../../assets/logonew.png'
+import card47 from '../../../assets/logo47.png'
+import cardGorin from '../../../assets/logogorin.png'
+import cardRanch from '../../../assets/logoranch.png'
+import cardMr from '../../../assets/logomr.png'
+
+import cardCurva from '../../..//assets/curva.png'
+import CardPlana from '../../../assets/plana.png'
+
 
 
 import { Container, Row } from "reactstrap";
@@ -10,38 +19,47 @@ import { Container, Row } from "reactstrap";
 function Home() {
   const gorras = [
     {
-      Imagen: "https://i.pinimg.com/474x/df/5e/20/df5e203e14f6c20586bde4ed9fb54474.jpg",
+      Imagen: cardNewEra,
       Titulo: "New Era",
       Link: "/newera"
+      
     },
     {
-      Imagen: "https://www.ameshop.com.mx/medias/AS-13822254-1.jpg?context=bWFzdGVyfGltYWdlc3wxMjA4MjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhkL2g1ZS8xMjMxODI1MTY0NzAwNi5qcGd8MDIzZTNjY2MxZGIyMWM2NjYxYzZiNTg0NTU2M2U5Y2VmNWI5NTUxZTc4MWQzNWU4MDk1ODI0MTM3ZGRlNWY3OA",
-      Titulo: "47",
-      Link: "/47caps"
-    },    {
-      Imagen: "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
-      Titulo: "Goorin Bros.",
-      Link: "/goorinbros"
-    },
-    {
-      Imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXCuvlIiWc-nZ5-sS5bAQi8BPjWTfmlMD0bQ&s",
-      Titulo: "Mr. Kash",
-      Link: "/mrkash"
-    },    {
-      Imagen: "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
-      Titulo: "Dandy Hats",
+      Imagen: cardRanch,
+      Titulo: "Ranch & Corral",
       Link: "/dandyhats"
     },
     {
-      Imagen: "https://www.ameshop.com.mx/medias/AS-13822254-1.jpg?context=bWFzdGVyfGltYWdlc3wxMjA4MjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhkL2g1ZS8xMjMxODI1MTY0NzAwNi5qcGd8MDIzZTNjY2MxZGIyMWM2NjYxYzZiNTg0NTU2M2U5Y2VmNWI5NTUxZTc4MWQzNWU4MDk1ODI0MTM3ZGRlNWY3OA",
-      Titulo: "Planas",
-      Link: "/planas"
-    },
+      Imagen: cardGorin,
+      Titulo: "Goorin Bros.",
+      Link: "/goorinbros"
+    },  
     {
-      Imagen: "https://www.newera.mx/cdn/shop/products/60420084_59FIFTY_WAVE_BOSCEL_OTC_3QL_1024x1024.png?v=1687383266",
+      Imagen: cardMr,
+      Titulo: "Mr. Kash",
+      Link: "/mrkash"
+    }, 
+ 
+
+
+    {
+      Imagen: card47,
+      Titulo: "47",
+      Link: "/47caps"
+    },   
+
+    {
+      Imagen: cardCurva,
       Titulo: "Curvas",
       Link: "/curvas"
     },
+    {
+      Imagen: CardPlana,
+      Titulo: "Planas",
+      Link: "/planas"
+    },
+    
+
 
   ];
   return (
