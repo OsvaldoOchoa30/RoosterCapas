@@ -4,34 +4,40 @@ import NavBarGlobal from '../../molecules/NavBarGlobal/NavBarGlobal'
 import { Container, Row } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
+import AdminAdd from '../../../assets/adminadd.png'
+import AdminProces from '../../../assets/adminproces.png'
+import AdminFinish from '../../../assets/adminfinish.png'
+
 
 function HomeAdmin() {
     const gorras = [
         {
-          Imagen: "https://http2.mlstatic.com/storage/developers-site-cms-admin/267001492404-pedidosporadelantado-head.jpg",
+          Imagen: AdminAdd,
           Titulo: "Pedidos Nuevos",
-          Precio: 15.99,
+          Precio: "Asignar Fecha",
           Link:"/pedidosnuevos"
         },
         {
-            Imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyV-f6QCdR2SfflrGELWOfI28v3NtUiiI52Q&s",
+            Imagen: AdminProces,
             Titulo: "Pedidos en Proceso",
-            Precio: 15.99,
+            Precio: "Asignar Estado",
             Link:'pedidosenproceso'
           },
           {
-            Imagen: "https://images.prismic.io/simpliroute/YTAyMWQzYjktMGU1OC00YjgyLWI5NjEtMTI3MGUwYjVhNzAz_6263219f1c6e61e93bdfab02_preparaciocc81n-de-pedidos.jpg?auto=compress%2Cformat&rect=0%2C0%2C700%2C467&w=1920&fit=max&q=100",
+            Imagen: AdminFinish,
             Titulo: "Pedidos Concluidos",
-            Precio: 15.99,
+            Precio: "Ver Pedidos Completados",
             Link:"pedidoscompletados"
           },
     ]
   return (
     <>
-    <NavBarGlobal/>
+    <NavBarGlobal
+    style={{ maring: "60px"}}
+    />
     <Container>
         <Row
-        lg = "5"
+        lg = "4"
         md="3"
         sm="2"
         xs="1"

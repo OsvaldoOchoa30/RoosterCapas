@@ -25,7 +25,7 @@ function CardCaps({ nombreCap, Precio, Imagen, link }) {
             justifyContent: "center",
           }}
         >
-          <img alt="Sample" src={Imagen} width="180px" />
+          <img alt="Sample" src={Imagen} height="200px"/>
         </div>
 
         <CardBody>
