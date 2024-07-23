@@ -1,58 +1,59 @@
 import React from 'react'
-import CardInformation from '../../molecules/CardInformation/CardInformation'
-import TituloRegistro from '../../atoms/TituloRegistro/TituloRegistro';
+import CardData from '../../molecules/CardData/CardData'
+import NavBarGlobal from '../../molecules/NavBarGlobal/NavBarGlobal'
 
-import styles from "./Ventas.module.css"
-
-function Ventas() {
-    const caps = [
+function PedidosenProceso() {
+    const cartaInormacion = [
         {
-          Imagen: "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
-          Titulo: "Gorra Negra",
-          Talla: "Unitalla",
-          Cantidad: "4",
-          Precio: 15.99,
-          Total: "$ 15.99"
+            Usuario: "Osvaldo Ochoa",
+            FechaPedido: 1,
+            FechaEntrega: "Fecha de Entrega: 27/06/2024",
+            Total: "$1,500.00",
+            
         },
         {
-            Imagen: "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
-            Titulo: "Gorra Negra",
-            Talla: "Unitalla",
-            Cantidad: "4",
-            Precio: 15.99,
-           
-          },
-          {
-            Imagen: "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
-            Titulo: "Gorra Negra",
-            Talla: "Unitalla",
-            Cantidad: "4",
-            Precio: 15.99,
-            Total: "$ 15.99"
-          },
-    ];
+            Usuario: "Fredy de la rosa",
+            FechaPedido: 2,
+            FechaEntrega: "Fecha de Entrega: 24/06/2024",
+            Total: "$1,500.00",
+            
+        },
+        {
+            Usuario: "Osvaldo Ochoa",
+            FechaPedido: 3,
+            FechaEntrega: "Fecha de Entrega: 25/06/2024",
+            Total: "$1,500.00",
+            
+        },
+    ]
 
-    return (
-        <>
-        <div className={styles.principal}>
-        {caps.map((cap) => (
-          <div className={styles.secundario}> 
-          <CardInformation
-            Gorra={cap.Titulo}
-            Talla={cap.Talla}
-            Precio={cap.Precio}
-            Imagen={cap.Imagen}
-            Cantidad={cap.Cantidad}
-          />
-          <TituloRegistro
-          titulo={cap.Total}
-          />
-          </div>
-        ))}
-        </div>
-        </>
-      )
-  
+  return (
+    <>
+    <NavBarGlobal/>
+    <div style={{
+        display: "block",
+        justifyContent:"center",
+        flexDirection: "column"
+    }}>
+    {cartaInormacion.map((data) => (
+        <div style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%"
+        }}>
+        <CardData
+            usuario={data.Usuario}
+          fechaPedido={data.FechaPedido}
+          fechaEntrega={data.FechaEntrega}          
+          total={data.Total}
+          boton="Ver Mas"
+        />
+         </div>
+      ))}
+     
+      </div>
+    </>
+  )
 }
 
-export default Ventas
+export default PedidosenProceso

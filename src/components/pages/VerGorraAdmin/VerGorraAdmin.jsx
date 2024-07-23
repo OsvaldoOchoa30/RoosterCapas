@@ -4,6 +4,7 @@ import BottomRegistro from "../../atoms/ButtomRegistro/ButtomRegistro";
 import Imagen from "../../atoms/Imagen/Imagen";
 import TallasCap from "../../molecules/TallasCap/TallasCap";
 import Unitalla from "../../molecules/UnitallaCap/Unitalla";
+import NavBarGlobal from '../../molecules/NavBarGlobal/NavBarGlobal'
 import { Form, FormGroup, Col, Label, Input, FormText } from "reactstrap";
 
 function VerGorraAdmin() {
@@ -60,6 +61,7 @@ function VerGorraAdmin() {
 
         return (
           <>
+          <NavBarGlobal/>
             <Imagen imagenOficial={cap.Image} />
             <Form>
               <FormGroup
