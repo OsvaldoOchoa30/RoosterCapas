@@ -50,7 +50,7 @@ function NavBarPrincipal(args) {
                 <DropdownItem href='/47caps'>47 Caps</DropdownItem>
                 <DropdownItem href='/goorinbros'>Goorin Bros.</DropdownItem>
                 <DropdownItem href='/mrkash'>Mr. Kash</DropdownItem>
-                <DropdownItem href='/dandyhats'>Dandy Hats</DropdownItem>
+                <DropdownItem href='/ranchcorral'>Ranch & Corral</DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>

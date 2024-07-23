@@ -10,7 +10,6 @@ function BottomRegistro({ botonRegistro, onClickF, color, height, width, page, k
       style={{ height, width }}
       color={color}
       onClick={onClickF}
-      pagina = {page}
     >
       {botonRegistro}
     </Button>

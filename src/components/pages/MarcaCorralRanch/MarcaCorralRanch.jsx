@@ -6,9 +6,9 @@ import TituloLogo from "../../atoms/TituloLogo/TituloLogo";
 
 import { Container, Row } from "reactstrap";
 
-import styles from "./MarcaDandyHats.module.css"
+import styles from "./MarcaCorralRanch.module.css"
 
-function MarcaDandyHats() {
+function MarcaCorralRanch() {
 
     const gorras = [
         {
@@ -33,7 +33,7 @@ function MarcaDandyHats() {
         <NavBarPrincipal />
       </div>
       <div className={styles.title}>
-        <TituloLogo titulo="Dandy Hats" />
+        <TituloLogo titulo="Ranch &  Corral" />
       </div>
       <Container>
         <Row
@@ -59,4 +59,4 @@ function MarcaDandyHats() {
   )
 }
 
-export default MarcaDandyHats
+export default MarcaCorralRanch

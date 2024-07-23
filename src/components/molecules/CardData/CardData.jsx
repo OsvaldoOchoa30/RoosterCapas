@@ -7,12 +7,14 @@ import {
   Button,
 } from "reactstrap";
 
+import { Link } from "react-router-dom";
+
 import Calendario from "../Calendario/Calendario";
 import BottomRegistro from "../../atoms/ButtomRegistro/ButtomRegistro";
 
 import React from "react";
 
-function CardData({ usuario, fechaPedido, fechaEntrega, total, calendario }) {
+function CardData({ usuario, fechaPedido, fechaEntrega, total, calendario, page }) {
   return (
     <>
       <Card
@@ -56,7 +58,10 @@ function CardData({ usuario, fechaPedido, fechaEntrega, total, calendario }) {
          </div>
          ) : (
           <>
-          <BottomRegistro botonRegistro="Ver Pedido"/>
+              <a href={page}>
+                <BottomRegistro botonRegistro="Ver Pedido" />
+                </a>
+              
           </>
          )} 
 

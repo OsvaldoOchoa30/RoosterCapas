@@ -49,6 +49,7 @@ function PedidosCompletados() {
           fechaEntrega={data.FechaEntrega}          
           total={data.Total}
           boton="Ver Mas"
+          page="/verpedido"
         />
          </div>
       ))}

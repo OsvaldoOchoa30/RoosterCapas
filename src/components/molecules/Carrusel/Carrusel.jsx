@@ -8,23 +8,21 @@ import {
   Container,
 } from "reactstrap";
 
+import carousel2 from "../../../assets/carrusel2.jpg"
+import carousel3 from "../../../assets/carrusel3.jpg"
+import carousel4 from "../../../assets/carrusel4.jpg"
+
 const items = [
   {
-    src: "https://picsum.photos/id/123/1200/400",
-    altText: "Slide 1",
-    caption: "Slide 1",
+    src: carousel2,
     key: 1,
   },
   {
-    src: "https://picsum.photos/id/456/1200/400",
-    altText: "Slide 2",
-    caption: "Slide 2",
+    src: carousel3,
     key: 2,
   },
   {
-    src: "https://picsum.photos/id/678/1200/400",
-    altText: "Slide 3",
-    caption: "Slide 3",
+    src: carousel4,
     key: 3,
   },
 ];
