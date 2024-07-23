@@ -1,6 +1,7 @@
 import React from 'react'
 
 import CardCaps from '../../molecules/CardCaps/CardCaps'
+import NavBarGlobal from '../../molecules/NavBarGlobal/NavBarGlobal'
 
 import { Container, Row } from 'reactstrap'
 
@@ -51,6 +52,7 @@ function Inventario() {
 
   return (
     <>
+    <NavBarGlobal/>
     <h1>INVENTARIO ROOSTER CAPS</h1>
     <Container>
         <Row

@@ -1,5 +1,6 @@
 import React from 'react'
 import CardData from '../../molecules/CardData/CardData'
+import NavBarGlobal from '../../molecules/NavBarGlobal/NavBarGlobal'
 
 function PedidosPendientes() {
     const cartaInormacion = [
@@ -8,8 +9,6 @@ function PedidosPendientes() {
             FechaPedido: "Fecha de Peidio: 20/06/2024",
             FechaEntrega: "Fecha de Entrega: Pendiente",
             Total: "$1,500.00",
-            
-            
         },
         {
             Usuario: "Fredy de la rosa",
@@ -23,12 +22,12 @@ function PedidosPendientes() {
             FechaPedido: "Fecha de Peidio: 20/06/2024",
             FechaEntrega: "Fecha de Entrega: Pendiente",
             Total: "$1,500.00",
-            
         },
     ]
 
   return (
     <>
+    <NavBarGlobal/>
     <div style={{
         display: "block",
         justifyContent:"center",
