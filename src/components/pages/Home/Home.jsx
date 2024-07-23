@@ -27,7 +27,7 @@ function Home() {
     {
       Imagen: cardRanch,
       Titulo: "Ranch & Corral",
-      Link: "/dandyhats"
+      Link: "/ranchcorral"
     },
     {
       Imagen: cardGorin,

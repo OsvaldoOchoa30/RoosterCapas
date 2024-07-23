@@ -33,9 +33,9 @@ function VerGorraAdmin() {
   const marcas = [
     "New Era",
     "47",
-    "GOORIN BROS.",
-    "MR. CROOSBOW",
-    "DANDY HATS",
+    "Goorin Bros.",
+    "Mr. Kash",
+    "Ranch & Corral",
   ];
   const tallas = ["Unitalla", "Multitalla"];
 

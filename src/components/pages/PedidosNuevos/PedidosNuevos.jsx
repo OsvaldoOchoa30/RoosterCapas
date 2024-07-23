@@ -2,7 +2,9 @@ import React from 'react'
 import CardData from '../../molecules/CardData/CardData'
 import NavBarGlobal from '../../molecules/NavBarGlobal/NavBarGlobal'
 
-function PedidosPendientes() {
+function PedidosNuevos() {
+   
+    
     const cartaInormacion = [
         {
             Usuario: "Osvaldo Ochoa",
@@ -45,7 +47,7 @@ function PedidosPendientes() {
           fechaEntrega={data.FechaEntrega}          
           total={data.Total}
           calendario="calendario"
-          
+          page="/verpedido"
 
         />
          </div>
@@ -56,4 +58,4 @@ function PedidosPendientes() {
   )
 }
 
-export default PedidosPendientes
+export default PedidosNuevos

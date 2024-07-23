@@ -14,7 +14,9 @@ function Calendario() {
           defaultValue={today(getLocalTimeZone()).subtract({ days: 0 })}
         />
         <BottomRegistro botonRegistro="Asignar Fecha" />
+        <a href="/verpedido">
         <BottomRegistro botonRegistro="Ver Pedido" />
+        </a>
       </div>
     </>
   );

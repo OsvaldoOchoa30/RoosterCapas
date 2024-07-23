@@ -23,11 +23,12 @@ import Inventario from "./components/pages/Inventario/Inventario";
 import VerGorraAdmin from "./components/pages/VerGorraAdmin/VerGorraAdmin";
 import AgregarGorra from "./components/pages/AgregarGorra/AgregarGorra";
 
-import PedidosPendientes from "./components/pages/PedidosPendientes/PedidosPendientes";
+import PedidosNuevos from "./components/pages/PedidosNuevos/PedidosNuevos";
 import PedidosenProceso from "./components/pages/PedidosenProceso/PedidosenProceso";
-import VerPedidosenProceso from "./components/pages/VerPedidosenProceso/VerPedidosenProceso";
 import PedidosCompletados from "./components/pages/PedidosCompletados/PedidosCompletados";
 import Ventas from "./components/pages/Ventas/Ventas";
+import VerPedido from "./components/pages/VerPedido/VerPedido";
+import ConfirmarPedido from "./components/pages/ConfirmarPedido/ConfirmarPedido";
 
 
 
@@ -36,7 +37,7 @@ import MarcaNewEra from "./components/pages/MarcaNewEra/MarcaNewEra";
 import Marca47 from "./components/pages/Marca47/Marca47";
 import MarcaGorinBros from "./components/pages/MarcaGorinBros/MarcaGorinBros";
 import MarcaMrKash from "./components/pages/MarcaMrKash/MarcaMrKash";
-import MarcaDandyHats from "./components/pages/MarcaDandyHats/MarcaDandyHats";
+import MarcaCorralRanch from "./components/pages/MarcaCorralRanch/MarcaCorralRanch";
 
 import GorraCurva from "./components/pages/GorraCurva/GorraCurva";
 import GorraPlana from "./components/pages/GorraPlana/GorraPlana";
@@ -78,7 +79,7 @@ const pages = createBrowserRouter([
   {
     //Pedidos Pendientes Admin
     path: "/pedidosnuevos",
-    element: <PedidosPendientes />,
+    element: <PedidosNuevos />,
   },
 
   {
@@ -92,9 +93,14 @@ const pages = createBrowserRouter([
     element: <PedidosCompletados />,
   },
   {
-    //Ver Pedidos en Proceso Admin
-    path: "/verpedidosenproceso",
-    element: <VerPedidosenProceso />,
+    //Ver Pedidos para establecer el status
+    path: "/confirmar",
+    element: <ConfirmarPedido />,
+  },
+  {
+    //Ver Pedidos para establecer el status
+    path: "/verpedido",
+    element: <VerPedido/>,
   },
   {
     //Inventario Admin
@@ -142,9 +148,9 @@ const pages = createBrowserRouter([
     element: <MarcaMrKash/>
   },
   {
-    //Dandy Caps
-    path: "/dandyhats",
-    element: <MarcaDandyHats/>
+    //Corral & Ranch
+    path: "/ranchcorral",
+    element: <MarcaCorralRanch/>
   },
   {
     //Planas

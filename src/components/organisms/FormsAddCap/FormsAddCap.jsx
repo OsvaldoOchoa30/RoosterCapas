@@ -167,9 +167,9 @@ function FormsAddCap() {
             <option value="" disabled>Marca</option>
             <option>New Era</option>
             <option>47</option>
-            <option>GOORIN BROS.</option>
-            <option>MR. CROOSBOW</option>
-            <option>DANDY HATS</option>
+            <option>Goorin Bros.</option>
+            <option>Mr. Kash</option>
+            <option>Ranch & Corral</option>
           </Input>
         </FormGroup>
 
