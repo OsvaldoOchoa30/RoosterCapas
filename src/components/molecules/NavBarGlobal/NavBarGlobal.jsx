@@ -18,7 +18,7 @@ import {
 import { HiCurrencyDollar } from "react-icons/hi2";
 import { MdAccountCircle } from "react-icons/md";
 import { FaBoxOpen } from "react-icons/fa";
-
+import { TbLogout2 } from "react-icons/tb";
 import styles from "./NavBarGlobal.module.css"
 
 function NavBarGlobal(args) {
@@ -71,9 +71,9 @@ function NavBarGlobal(args) {
             </NavItem>
 
             <NavItem>
-              <NavLink href=" ">
+              <NavLink href="/login ">
               {/*Este es el icono del Perfil, falta rutearlo*/}
-              <MdAccountCircle 
+              <TbLogout2
               color='white'
               size="35px"
               style={{marginLeft:"-40px", position:"absolute", bottom:"20px"}}

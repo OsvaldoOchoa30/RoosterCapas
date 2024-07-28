@@ -15,8 +15,9 @@ import {
 } from 'reactstrap';
 
 import { FaShoppingCart } from "react-icons/fa";
-import { MdAccountCircle } from "react-icons/md";
+
 import { IoSearchOutline } from "react-icons/io5";
+import { TbLogout2 } from "react-icons/tb";
 
 import styles from './NavBarPrincipal.module.css'
 
@@ -87,9 +88,9 @@ function NavBarPrincipal(args) {
             </NavItem>
 
             <NavItem>
-              <NavLink href=" ">
+              <NavLink href="/login ">
               {/*Este es el icono del Perfil, falta rutearlo*/}
-              <MdAccountCircle   
+              <TbLogout2
               size="35px"
               style={{marginLeft:"10px", position:"absolute", bottom:"20px"}}
               />
@@ -98,7 +99,7 @@ function NavBarPrincipal(args) {
 
          
           </Nav>
-          <NavbarText>ROOSTER CAPS</NavbarText>
+          <NavbarText>ROOSTERCAPS</NavbarText>
         </Collapse>
       </Navbar>
     </div>

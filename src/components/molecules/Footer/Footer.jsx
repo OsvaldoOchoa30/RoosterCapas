@@ -10,7 +10,7 @@ function Footer() {
     <div>
       <footer className={styles.footer}>
         <a
-          href="https://www.facebook.com/?locale=es_LA"
+          href="https://www.facebook.com/profile.php?id=61563260127358"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -18,7 +18,7 @@ function Footer() {
         </a>
 
         <a
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/rooster.caps/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -26,7 +26,7 @@ function Footer() {
         </a>
 
         <a
-        href="https://www.tiktok.com/login?lang=es&redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fupload%3Flang%3Des"
+        href="https://www.tiktok.com/@roostercaps2"
         target="_blank"
         rel="noopener noreferrer"
         >
