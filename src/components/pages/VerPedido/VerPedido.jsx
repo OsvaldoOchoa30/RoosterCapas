@@ -39,8 +39,7 @@ function VerPedido() {
       ))}
       <TituloRegistro titulo="Total: $3500.00" />
       <div className={styles.btnGroup}>
-        <BottomRegistro botonRegistro="Confirmar Pedido" className={styles.confirmButton} />
-        <BottomRegistro botonRegistro="Cancelar Pedido" className={styles.cancelButton} />
+
       </div>
     </div>
   );

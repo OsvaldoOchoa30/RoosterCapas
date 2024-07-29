@@ -1,3 +1,5 @@
+//Conectado con el Back Exitosamente
+
 import React, { useState } from 'react';
 import ButtoomRegistro from '../../atoms/ButtomRegistro/ButtomRegistro';
 import ImputRegistro from '../../atoms/ImputRegistro/ImputRegistro';
@@ -7,10 +9,10 @@ import styles from './FormsRegistro.module.css';
 
 function FormsRegistro() {
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
     password: '',
     email: '',
-    phone: ''
+    phone_number: ""
   });
 
   const [errors, setErrors] = useState({});
@@ -20,7 +22,7 @@ function FormsRegistro() {
     let error = '';
 
     switch (name) {
-      case 'username':
+      case 'name':
         if (value.trim() === '') {
           error = 'El nombre de usuario es obligatorio';
         } else if (value.trim().length < 6) {
@@ -41,7 +43,7 @@ function FormsRegistro() {
           error = 'El correo electrónico no es válido';
         }
         break;
-      case 'phone':
+      case 'phone_number':
         if (!/^\d{10}$/.test(value)) {
           error = 'El número de teléfono debe tener 10 dígitos';
         }
@@ -53,31 +55,53 @@ function FormsRegistro() {
     return error;
   };
 
-  const prubita = () => {
+const handleFormSubmit = async () => {
     const newErrors = {};
     let valid = true;
 
+    // Validación del formulario
     for (const key in formData) {
-      const error = validate(key, formData[key]);
-      if (error) {
-        newErrors[key] = error;
-        valid = false;
-      }
+        const error = validate(key, formData[key]);
+        if (error) {
+            newErrors[key] = error;
+            valid = false;
+        }
     }
 
     setErrors(newErrors);
     setIsFormValid(valid);
 
     if (valid) {
-      window.location.href = '/login';
+        try {
+            const response = await fetch('http://localhost:3001/api/v1/custumer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            // Verifica el estado de la respuesta
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            alert("result.message");  // Asegúrate de que el backend devuelva un mensaje
+            window.location.href = '/login';
+        } catch (error) {
+            // Manejo de errores
+            console.error('Error en la solicitud:', error);
+            alert(`Error de conexión: ${error.message}`);
+        }
     } else {
-      alert("Hay errores en el formulario");
+        alert("Hay errores en el formulario");
     }
-  };
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'phone' && /\D/.test(value)) return; // Permite solo dígitos
+    if (name === 'phone_number' && /\D/.test(value)) return; // Permite solo dígitos
     setFormData({ ...formData, [name]: value });
 
     const error = validate(name, value);
@@ -92,11 +116,7 @@ function FormsRegistro() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    prubita();
-  };
-
-  const goToLogin = () => {
-    window.location.href = '/login';
+    handleFormSubmit();
   };
 
   return (
@@ -109,11 +129,11 @@ function FormsRegistro() {
             <ImputRegistro
               inputText="Nombre de Usuario"
               inputType="text"
-              name="username"
-              value={formData.username}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               onBlur={handleBlur}
-              error={errors.username}
+              error={errors.name}
             />
           </Col>
         </FormGroup>
@@ -151,26 +171,21 @@ function FormsRegistro() {
             <ImputRegistro
               inputText="Número de Teléfono"
               inputType="tel"
-              name="phone"
-              value={formData.phone}
+              name="phone_number"
+              value={formData.phone_number}
               onChange={handleChange}
               onBlur={handleBlur}
-              error={errors.phone}
+              error={errors.phone_number}
             />
           </Col>
         </FormGroup>
 
         <FormGroup row style={{ display: 'flex', justifyContent: 'center' }}>
           <Col sm={10} style={{ display: 'flex', justifyContent: 'center' }}>
-            <ButtoomRegistro botonRegistro="Registrarse" onClickF={prubita} />
+            <ButtoomRegistro botonRegistro="Registrarse" onClickF={handleFormSubmit} />
           </Col>
         </FormGroup>
       </Form>
-
-      <div className={styles.centeredText}>
-        <h3>¿Ya tienes una cuenta?</h3>
-        <ButtoomRegistro botonRegistro="Iniciar Sesión" onClickF={goToLogin} />
-      </div>
     </div>
   );
 }
