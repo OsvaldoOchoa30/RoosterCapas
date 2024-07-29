@@ -8,7 +8,7 @@ function Calendario() {
     <>
       <div>
         <DatePicker
-          label="Selecciona la Fehca"
+          label="Selecciona la Fecha"
           className="max-w-[284px]"
           minValue={today(getLocalTimeZone())}
           defaultValue={today(getLocalTimeZone()).subtract({ days: 0 })}

@@ -3,6 +3,7 @@ import TituloLogo from "../../atoms/TituloLogo/TituloLogo";
 import TituloRegistro from "../../atoms/TituloRegistro/TituloRegistro";
 import CardInformation from "../../molecules/CardInformation/CardInformation";
 import BottomRegistro from "../../atoms/ButtomRegistro/ButtomRegistro";
+import styles from './VerPedido.module.css';
 
 function VerPedido() {
   const pedidosPendientes = [
@@ -24,10 +25,11 @@ function VerPedido() {
   ];
 
   return (
-    <div>
+    <div className={styles.verPedido}>
       <TituloLogo titulo="Osvaldo Ochoa" />
-      {pedidosPendientes.map((pedido) => (
+      {pedidosPendientes.map((pedido, index) => (
         <CardInformation
+          key={index}
           Gorra={pedido.Titulo}
           Talla={pedido.Talla}
           Precio={pedido.Precio}
@@ -35,8 +37,11 @@ function VerPedido() {
           Cantidad={pedido.Cantidad}
         />
       ))}
-
       <TituloRegistro titulo="Total: $3500.00" />
+      <div className={styles.btnGroup}>
+        <BottomRegistro botonRegistro="Confirmar Pedido" className={styles.confirmButton} />
+        <BottomRegistro botonRegistro="Cancelar Pedido" className={styles.cancelButton} />
+      </div>
     </div>
   );
 }

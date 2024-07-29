@@ -56,7 +56,7 @@ function NavBarPrincipal(args) {
             </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                Disenos
+                Diseños
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem href='/planas'>Planas</DropdownItem>
