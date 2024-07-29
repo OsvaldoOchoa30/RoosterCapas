@@ -14,7 +14,7 @@ function PedidosNuevos() {
         },
         {
             Usuario: "Fredy de la rosa",
-            FechaPedido: "Fecha de Peidio: 20/06/2024",
+            FechaPedido: "Fecha de Pedido: 20/06/2024",
             FechaEntrega: "Fecha de Entrega: Pendiente",
             Total: "$1,500.00",
             

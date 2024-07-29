@@ -73,7 +73,7 @@ function FormsRegistro() {
     } else {
       alert("Hay errores en el formulario");
     }
-  }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -93,6 +93,10 @@ function FormsRegistro() {
   const handleSubmit = (e) => {
     e.preventDefault();
     prubita();
+  };
+
+  const goToLogin = () => {
+    window.location.href = '/login';
   };
 
   return (
@@ -162,6 +166,11 @@ function FormsRegistro() {
           </Col>
         </FormGroup>
       </Form>
+
+      <div className={styles.centeredText}>
+        <h3>¿Ya tienes una cuenta?</h3>
+        <ButtoomRegistro botonRegistro="Iniciar Sesión" onClickF={goToLogin} />
+      </div>
     </div>
   );
 }

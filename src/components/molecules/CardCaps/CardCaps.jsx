@@ -5,19 +5,19 @@ import {
   CardTitle,
   CardSubtitle,
 } from "reactstrap";
-import "./CardCaps.css";
+import styles from "./CardCaps.module.css";  // Importa el archivo CSS como un módulo
 
 function CardCaps({ nombreCap, Precio, Imagen, link }) {
   return (
-    <a href={link} className="card-link">
-      <Card className="card-container">
-        <div className="card-image-wrapper">
-          <img alt={nombreCap} src={Imagen} className="card-image"/>
+    <a href={link} className={styles.cardLink}>
+      <Card className={styles.cardContainer}>
+        <div className={styles.cardImageWrapper}>
+          <img alt={nombreCap} src={Imagen} className={styles.cardImage}/>
         </div>
 
         <CardBody>
-          <CardTitle tag="h5" className="card-title">{nombreCap}</CardTitle>
-          <CardSubtitle className="mb-2 text-muted card-subtitle" tag="h6">
+          <CardTitle tag="h5" className={styles.cardTitle}>{nombreCap}</CardTitle>
+          <CardSubtitle className={`mb-2 text-muted ${styles.cardSubtitle}`} tag="h6">
             {Precio}
           </CardSubtitle>
         </CardBody>
@@ -27,3 +27,4 @@ function CardCaps({ nombreCap, Precio, Imagen, link }) {
 }
 
 export default CardCaps;
+
