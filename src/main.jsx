@@ -73,7 +73,7 @@ const pages = createBrowserRouter([
   },
   {
     //Ver Gorra Cliente
-    path: "/vergorra",
+    path: "/vergorra/:id",
     element: <VerGorraCliente />,
   },
   {
@@ -94,12 +94,12 @@ const pages = createBrowserRouter([
   },
   {
     //Ver Pedidos para establecer el status
-    path: "/confirmar",
+    path: "/confirmar/:id",
     element: <ConfirmarPedido />,
   },
   {
     //Ver Pedidos para establecer el status
-    path: "/verpedido",
+    path: "/verpedido/:id",
     element: <VerPedido/>,
   },
   {
@@ -114,7 +114,7 @@ const pages = createBrowserRouter([
   },
   {
     //Agregar Gorras
-    path: "/gorraadmin",
+    path: "/gorraadmin/:id",
     element: <VerGorraAdmin/>,
   },
   {

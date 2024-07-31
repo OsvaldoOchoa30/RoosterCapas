@@ -14,7 +14,7 @@ import BottomRegistro from "../../atoms/ButtomRegistro/ButtomRegistro";
 
 import React from "react";
 
-function CardData({ usuario, fechaPedido, fechaEntrega, total, calendario, page }) {
+function CardData({ usuario, fechaPedido, fechaEntrega, total, calendario,id, page ,comp,status}) {
   return (
     <>
       <Card
@@ -41,20 +41,21 @@ function CardData({ usuario, fechaPedido, fechaEntrega, total, calendario, page 
             </CardSubtitle>
 
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-              {fechaPedido}
+              {"Pedido:" + fechaPedido}
             </CardSubtitle>
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-              {fechaEntrega}
+              {"Completado: " + fechaEntrega}
             </CardSubtitle>
           </div>
 
           <div>
-            <CardTitle tag="h3">{total}</CardTitle>
+            <CardTitle tag="h3">{"$"+total}</CardTitle>
+            {comp == "comp" ?(<CardTitle tag="h3">{status}</CardTitle>):null}
           </div>
 
          {calendario === "calendario" ? (
            <div>
-           <Calendario />
+           <Calendario link={id}/>
          </div>
          ) : (
           <>

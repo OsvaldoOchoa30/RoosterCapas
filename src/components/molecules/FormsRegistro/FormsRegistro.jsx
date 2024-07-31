@@ -6,7 +6,7 @@ import ImputRegistro from '../../atoms/ImputRegistro/ImputRegistro';
 import TituloRegistro from '../../atoms/TituloRegistro/TituloRegistro';
 import { Form, FormGroup, Col } from 'reactstrap';
 import styles from './FormsRegistro.module.css';
-
+const url = import.meta.env.VITE_URL_API
 function FormsRegistro() {
   const [formData, setFormData] = useState({
     name: '',
@@ -73,7 +73,7 @@ const handleFormSubmit = async () => {
 
     if (valid) {
         try {
-            const response = await fetch('http://localhost:3001/api/v1/custumer', {
+            const response = await fetch(`${url}api/v1/custumer`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

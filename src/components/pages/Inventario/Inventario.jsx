@@ -1,74 +1,75 @@
-import React from 'react';
-import CardCaps from '../../molecules/CardCaps/CardCaps';
-import NavBarGlobal from '../../molecules/NavBarGlobal/NavBarGlobal';
-import { Container, Row } from 'reactstrap';
-import styles from './Inventario.module.css';  // Importa el archivo CSS como un módulo
-
+import React, { useEffect, useState } from "react";
+import CardCaps from "../../molecules/CardCaps/CardCaps";
+import NavBarGlobal from "../../molecules/NavBarGlobal/NavBarGlobal";
+import { Container, Row } from "reactstrap";
+import styles from "./Inventario.module.css";
+const url = import.meta.env.VITE_URL_API;
 function Inventario() {
-    const gorras = [
-        {
-            Imagen: "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
-            Titulo: "Gorra Negra",
-            Precio: 15.99,
-            Link: "/gorraadmin",
-        },
-        {
-            Imagen: "https://www.ameshop.com.mx/medias/AS-13822254-1.jpg?context=bWFzdGVyfGltYWdlc3wxMjA4MjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhkL2g1ZS8xMjMxODI1MTY0NzAwNi5qcGd8MDIzZTNjY2MxZGIyMWM2NjYxYzZiNTg0NTU2M2U5Y2VmNWI5NTUxZTc4MWQzNWU4MDk1ODI0MTM3ZGRlNWY3OA",
-            Titulo: "Gorra Roja",
-            Precio: 12.99,
-            Link: "/gorraadmin",
-        },
-        {
-            Imagen: "https://images.footballfanatics.com/dallas-mavericks/mens-new-era-gray/blue-dallas-mavericks-tip-off-two-tone-59fifty-fitted-hat_ss5_p-200026091+pv-1+u-hwelw8ei7j6dljgghra0+v-xhnn4cvzf1pbuzsjh3bj.jpg?_hv=2&w=900",
-            Titulo: "Gorra Negra",
-            Precio: 15.99,
-            Link: "/gorraadmin",
-        },
-        {
-            Imagen: "https://www.ameshop.com.mx/medias/AS-13822254-1.jpg?context=bWFzdGVyfGltYWdlc3wxMjA4MjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhkL2g1ZS8xMjMxODI1MTY0NzAwNi5qcGd8MDIzZTNjY2MxZGIyMWM2NjYxYzZiNTg0NTU2M2U5Y2VmNWI5NTUxZTc4MWQzNWU4MDk1ODI0MTM3ZGRlNWY3OA",
-            Titulo: "Gorra Roja",
-            Precio: 12.99,
-            Link: "/gorraadmin",
-        },
-        {
-            Imagen: "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
-            Titulo: "Gorra Negra",
-            Precio: 15.99,
-            Link: "/gorraadmin",
-        },
-        {
-            Imagen: "https://www.newera.mx/cdn/shop/products/60298842_1024x1024.png?v=1685653699",
-            Titulo: "Gorra New Era Floral",
-            Precio: 16.99,
-            Link: "/gorraadmin"
-        },
-    ];
+  const [gorras, setGorras] = useState([]);
 
-    return (
-        <>
-            <NavBarGlobal />
-            <h1 className={styles.title}>INVENTARIO ROOSTER CAPS</h1>
-            <Container>
-                <Row
-                    lg="5"
-                    md="3"
-                    sm="2"
-                    xs="1"
-                    style={{ display: "flex", justifyContent: "center" }}
-                >
-                    {gorras.map((gorra, index) => (
-                        <CardCaps
-                            key={index}
-                            nombreCap={gorra.Titulo}
-                            Precio={gorra.Precio}
-                            Imagen={gorra.Imagen}
-                            link={gorra.Link}
-                        />
-                    ))}
-                </Row>
-            </Container>
-        </>
-    );
+  const datasGet = async () => {
+    try {
+      const response = await fetch(`${url}api/v1/cap`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  
+      if (!response.ok) {
+        throw new Error("Error fetching data");
+      }
+  
+      const data = await response.json();
+      console.log(data);
+      const seenNames = new Set();
+      const uniqueGorras = data.filter(gorra => {
+        if (seenNames.has(gorra.name)) {
+          return false; 
+        }
+        seenNames.add(gorra.name);
+        return true;
+      });
+  
+      setGorras(uniqueGorras); 
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  
+
+  useEffect(() => {
+    datasGet();
+    return () => {
+      console.log("Componente desmontado");
+    };
+  }, []);
+
+  return (
+    <>
+      <NavBarGlobal />
+      <h1 className={styles.title}>INVENTARIO ROOSTER CAPS</h1>
+      <Container>
+        <Row
+          lg="5"
+          md="3"
+          sm="2"
+          xs="1"
+          style={{ display: "flex", justifyContent: "center" }}>
+          {gorras.map((gorra, index) => (
+            <CardCaps
+              key={index}
+              nombreCap={gorra.name}
+              Precio={gorra.price}
+              Imagen={gorra.imagen}
+              link="/gorraadmin"
+              id={gorra.id}
+            />
+          ))}
+        </Row>
+      </Container>
+    </>
+  );
 }
 
 export default Inventario;

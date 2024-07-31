@@ -3,10 +3,9 @@ import TituloRegistro from "../../atoms/TituloRegistro/TituloRegistro";
 import ParrafoRegistro from "../../atoms/ParrafoRegistro/ParrafoRegistro";
 import BottomRegistro from "../../atoms/ButtomRegistro/ButtomRegistro";
 import ImputRegistro from "../../atoms/ImputRegistro/ImputRegistro";
-
 import styles from "./FormsLogin.module.css";
 import { Form, FormGroup, Col } from "reactstrap";
-
+const url =import.meta.env.VITE_URL_API
 function FormsLogin() {
   const [nombre, setNombre] = useState('');
   const [password, setPassword] = useState('');
@@ -30,7 +29,8 @@ function FormsLogin() {
     }
 
     try {
-      const response = await fetch('http://localhost:3001/api/v1/custumer/login', {  
+  
+      const response = await fetch(`${url}api/v1/custumer/login`, {  
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,13 +40,13 @@ function FormsLogin() {
 
       const data = await response.json();
 
-      console.log('Response Status:', response.status); // Depuración
-      console.log('Response Data:', data); // Depuración
+      console.log('Response Status:', response.status); 
+      console.log('Response Data:', data.login.token); 
 
-      if (response.ok) { // Verifica que la respuesta sea exitosa (status en el rango 200-299)
+      if (response.ok) { 
         alert("Inicio de sesión exitoso");
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('userId', data.id);
+        localStorage.setItem('token', data.login.token);
+        localStorage.setItem('userId', data.login.id);
         if (data.id === 1) {
           window.location.assign("/admin")
         } else {
@@ -73,7 +73,7 @@ function FormsLogin() {
         <Form>
           <FormGroup row style={{ display: "flex", justifyContent: "center" }}>
             <Col sm={10}>
-              <ImputRegistro inputText="Nombre de Usuario" inputType="texto" onChange={handleNombre} />
+              <ImputRegistro inputText="Email de Usuario" inputType="texto" onChange={handleNombre} />
             </Col>
           </FormGroup>
 

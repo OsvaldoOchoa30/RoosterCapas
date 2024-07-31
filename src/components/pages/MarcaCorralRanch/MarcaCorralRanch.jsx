@@ -1,32 +1,51 @@
-import React from 'react'
+import React,{useState, useEffect}  from 'react'
 import NavBarPrincipal from "../../molecules/NavBarPrincipal/NavBarPrincipal";
 import CardCaps from "../../molecules/CardCaps/CardCaps";
 import Footer from "../../molecules/Footer/Footer";
 import TituloLogo from "../../atoms/TituloLogo/TituloLogo";
-
+const url = import.meta.env.VITE_URL_API;
 import { Container, Row } from "reactstrap";
 
 import styles from "./MarcaCorralRanch.module.css"
 
 function MarcaCorralRanch() {
+  const [gorras2, setGorras2] = useState([]);
 
-    const gorras = [
-        {
-          Imagen:
-            "https://www.innovasport.com/medias/gorra-new-era-59fifty-cerrada-yankees-mlb-classics-is-11591122-1.jpg?context=bWFzdGVyfGltYWdlc3wxMDYxNzR8aW1hZ2UvanBlZ3xpbWFnZXMvaGI1L2hhMS8xMTQ2NzM1OTY0OTgyMi5qcGd8ODhiZWM4ZjRjY2E2MGZhZWMzN2NiZjFiMzQwNzQ1ZGNmMTFiYjIzOWI3MTk2ZTE2ZWVjOTU5ODBjZGRkNDIzMQ",
-          Titulo: "Gorra Negra",
-          Precio: 15.99,
-          Link:"/vergorra"
+  const datasGet = async () => {
+    try {
+      const response = await fetch(`${url}api/v1/cap//categorie/${5}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          Imagen:
-            "https://www.ameshop.com.mx/medias/AS-13822254-1.jpg?context=bWFzdGVyfGltYWdlc3wxMjA4MjV8aW1hZ2UvanBlZ3xpbWFnZXMvaDhkL2g1ZS8xMjMxODI1MTY0NzAwNi5qcGd8MDIzZTNjY2MxZGIyMWM2NjYxYzZiNTg0NTU2M2U5Y2VmNWI5NTUxZTc4MWQzNWU4MDk1ODI0MTM3ZGRlNWY3OA",
-          Titulo: "Gorra Roja",
-          Precio: 12.99,
-          Link:"/vergorra"
-        },
-      ];
+      });
 
+      if (!response.ok) {
+        throw new Error("Error fetching data");
+      }
+
+      const data = await response.json();
+      console.log(data);
+      const seenNames = new Set();
+      const uniqueGorras = data.filter((gorra) => {
+        if (seenNames.has(gorra.name)) {
+          return false;
+        }
+        seenNames.add(gorra.name);
+        return true;
+      });
+
+      setGorras2(uniqueGorras);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  useEffect(() => {
+    datasGet();
+    return () => {
+      console.log("Componente desmontado");
+    };
+  }, []);
   return (
     <>
       <div className={styles.nav}>
@@ -43,12 +62,14 @@ function MarcaCorralRanch() {
           xs="1"
           style={{ display: "flex", justifyContent: "center" }}
         >
-          {gorras.map((gorra) => (
+          {gorras2.map((gorra) => (
             <CardCaps
-              nombreCap={gorra.Titulo}
-              Precio={gorra.Precio}
-              Imagen={gorra.Imagen}
-              link={gorra.Link}
+              key={gorra.Titulo}
+              nombreCap={gorra.name}
+              Precio={gorra.price}
+              Imagen={gorra.imagen}
+              link="/vergorra"
+              id={gorra.id}
             />
           ))}
         </Row>

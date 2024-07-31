@@ -1,30 +1,25 @@
-import React from "react";
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-} from "reactstrap";
-import styles from "./CardCaps.module.css";  // Importa el archivo CSS como un módulo
+import React, { useEffect } from "react";
+import styles from "./CardCaps.module.css";
+import { data } from "autoprefixer";
 
-function CardCaps({ nombreCap, Precio, Imagen, link }) {
+function CardCaps({ nombreCap, Precio, Imagen, link, id,hrfs}) {
+ 
   return (
-    <a href={link} className={styles.cardLink}>
-      <Card className={styles.cardContainer}>
-        <div className={styles.cardImageWrapper}>
-          <img alt={nombreCap} src={Imagen} className={styles.cardImage}/>
-        </div>
-
-        <CardBody>
-          <CardTitle tag="h5" className={styles.cardTitle}>{nombreCap}</CardTitle>
-          <CardSubtitle className={`mb-2 text-muted ${styles.cardSubtitle}`} tag="h6">
-            {Precio}
-          </CardSubtitle>
-        </CardBody>
-      </Card>
+    <a href={hrfs} className={styles.cardLink}>
+    <div className={styles.card}>
+      <img src={Imagen} alt={nombreCap} className={styles.cardImage} />
+      <div className={styles.cardContent}>
+        <h3 className={styles.cardTitle}>{nombreCap}</h3>
+        {Precio ? <p className={styles.cardPrice}>${Precio}</p> : null}
+        {link ? (
+          <a href={`${link}/${id}`} className={styles.cardLink}>
+            Ver más
+          </a>
+        ) : null}
+      </div>
+    </div>
     </a>
   );
 }
 
 export default CardCaps;
-

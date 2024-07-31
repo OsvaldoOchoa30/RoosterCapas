@@ -1,39 +1,59 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Caracteristicas from "../../molecules/Caracteristicas/Caracteristicas";
 import NavBarPrincipal from "../../molecules/NavBarPrincipal/NavBarPrincipal";
 import Footer from "../../molecules/Footer/Footer";
-
+const url = import.meta.env.VITE_URL_API;
 function VerGorraCliente() {
-  const gorras = [
-    {
-      Imagen:
-        "https://www.newera.mx/cdn/shop/files/60571871_59FIFTY_5950DAY595021803_CHIBUL_HGR_3QL_720x.png?v=1715043025",
-      Titulo: "Chicago Bulls NBA 70th Anniversary",
-      Precio: 15.99,
-      Descripcion:
-        "Descubre la elegancia y el estilo único de la Gorra New Era de los Yankees con Rosas. Esta gorra es una combinación perfecta de pasión deportiva y un toque de delicadeza floral, ideal para los aficionados que desean destacar en cualquier ocasión.",
-    tallas:['7','7 1/4','7 1/2', '7 3/4', '7 1/8'] 
-    },
-    // unitalla tallas:['unitalla']
-  ];
+  const { id } = useParams();
+  const [datos, setDatos] = useState([]);
+  const datasGet = async () => {
+    try {
+      const response = await fetch(`${url}api/v1/cap/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
+      if (!response.ok) {
+        throw new Error("Error fetching data");
+      }
+      const data = await response.json();
+      setDatos(data);
+      console.log(data);
+      return true;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    datasGet();
+    return () => {
+      console.log("Componente desmontado");
+    };
+  }, []);
+  if (datos.length == 0) {
+    return <div>Loading...</div>;
+  }
   return (
     <div>
       <div>
-      <NavBarPrincipal />
+        <NavBarPrincipal />
       </div>
 
       <div>
-      {gorras.map((gorras) => (
-        <Caracteristicas
-          nombre={gorras.Titulo}
-          precio={gorras.Precio}
-          descripcion={gorras.Descripcion}
-          imagen={gorras.Imagen}
-          tallas={gorras.tallas}
-        />
-      ))}
+          <Caracteristicas
+            nombre={datos.name}
+            precio={datos.price}
+            descripcion={datos.descripcion}
+            imagen={datos.imagen}
+            tallas={datos.talla_id}
+            id_gorra ={datos.id}
+            
+          />
+
       </div>
       <Footer />
     </div>

@@ -3,29 +3,42 @@ import { Card } from "reactstrap";
 import ParrafoRegistro from "../../atoms/ParrafoRegistro/ParrafoRegistro";
 import TituloRegistro from "../../atoms/TituloRegistro/TituloRegistro";
 import ButtonDelete from "../../atoms/ButtonDelete/ButtonDelete";
-
+import BottomRegistro from '../../atoms/ButtomRegistro/ButtomRegistro';
 import styles from "./CardInformation.module.css";
 
-function CardInformation({ Imagen, Gorra, Talla, Precio, Cantidad, carrito, OnDataChange }) {
-  const [cantidadCarrito, setCantidadCarrito] = useState(Cantidad);
-  const [precioTotal, setPrecioTotal] = useState(Precio);
+const url = import.meta.env.VITE_URL_API;
+function CardInformation({
+  Imagen,
+  Gorra,
+  Talla,
+  Precio,
+  Cantidad,
+  status,
+  carrito,
+  idPedido,
+  OnDataChange,
+  confir
+}) {
+  
 
-
-  const handleCantidadCarrito = (e) => {
-    const value = e.target.value;
-    if (/^\d*$/.test(value)) { // Solo números
-      setCantidadCarrito(value);
+  const eliminar =async () => {
+    const result = await fetch(`${url}api/v1/order/status/${idPedido}`,{
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({newStatus:"Cancelado"})
+    })
+    if (!result.ok) {
+      throw new Error("Error fetching data");
     }
+    alert("Pedido cancelado")
+    location.reload();
   };
-
-  useEffect(() => {
-    const proceso = cantidadCarrito * Precio
-    setPrecioTotal(proceso)
-  }, [cantidadCarrito]);
-
+ 
   return (
     <Card style={{ width: "60em", margin: "10px" }}>
-      <div className={styles.contenedor}>
+      {confir=="confirmar"?(<div className={styles.contenedor}>
         <div className={styles.imagen}>
           <a href="vergorra">
             <img src={Imagen} alt="Gorra XD" width="200px" />
@@ -34,45 +47,67 @@ function CardInformation({ Imagen, Gorra, Talla, Precio, Cantidad, carrito, OnDa
 
         <div className={styles.datos}>
           <ParrafoRegistro registro={Gorra} />
-          <ParrafoRegistro registro={Talla} />
+          <ParrafoRegistro registro={"Precio: $" + Precio} />
         </div>
 
         <div className={styles.cantidad}>
-          {carrito === "carrito" ? (
-            <>
+          <>
+            {Cantidad === "0" ? (
               <input
                 className={styles.input}
                 type="number"
-                placeholder={cantidadCarrito}
-                onChange={handleCantidadCarrito}
-                value={cantidadCarrito}
+                placeholder="Cantidad"
               />
-            </>
-          ) : (
-            <>
-              {Cantidad === "0" ? (
-                <input
-                  className={styles.input}
-                  type="number"
-                  placeholder="Cantidad"
-                />
-              ) : (
-                <h1>{Cantidad}</h1>
-              )}
-            </>
-          )}
+            ) : (
+              <h3>{"cantidad: " + Cantidad}</h3>
+            )}
+          </>
         </div>
 
         <div className={styles.precio}>
-          <TituloRegistro titulo={`Total: $${precioTotal}`} />
+          <TituloRegistro titulo={`Talla: ${Talla}`} />
         </div>
+
         
-        {(Cantidad === "0" || carrito === "carrito") && (
-          <div className={styles.cantidad}>
+      </div>):(
+        <div className={styles.contenedor}>
+        <div className={styles.imagen}>
+          <a href="vergorra">
+            <img src={Imagen} alt="Gorra XD" width="200px" />
+          </a>
+        </div>
+
+        <div className={styles.datos}>
+          <ParrafoRegistro registro={Gorra} />
+          <ParrafoRegistro registro={"Estatus: " + status} />
+        </div>
+
+        <div className={styles.cantidad}>
+          <>
+            {Cantidad === "0" ? (
+              <input
+                className={styles.input}
+                type="number"
+                placeholder="Cantidad"
+              />
+            ) : (
+              <h3>{"cantidad: " + Cantidad}</h3>
+            )}
+          </>
+        </div>
+
+        <div className={styles.precio}>
+          <TituloRegistro titulo={`Total: $${Talla}`} />
+        </div>
+
+        {(status !== "Cancelado") && (
+          <div className={styles.cantidad} onClick={eliminar}>
             <ButtonDelete />
           </div>
         )}
       </div>
+      )}
+      
     </Card>
   );
 }
